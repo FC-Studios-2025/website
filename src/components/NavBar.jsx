@@ -9,10 +9,10 @@ const NavBar = () => {
       <div className="flex items-center justify-between">
         {/* Left NavBar */}
         <div className="flex gap-2 items-center">
-          <div className="h-10 w-10">
+          <div className="h-16 w-16">
             <img src={FilmCraftStudiosLogo} alt="FilmCraftStudiosLogo" />
           </div>
-          <div className="text-lg font-bold flex gap-1.5">
+          <div className="text-lg md:text-2xl lg:text-4xl font-bold flex gap-1.5">
             Film Craft <span className="font-light italic">Studios</span>
           </div>
         </div>
