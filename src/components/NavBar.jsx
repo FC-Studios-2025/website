@@ -22,14 +22,14 @@ const NavBar = () => {
             <BasicButton
               iconLeft={<FaEnvelope />}
               variant="primary"
-              size="small"
+              size="large"
             >E-Mail</BasicButton>
           </div>
           <div>
             <BasicButton
               iconLeft={<FaWhatsapp />}
               variant="primary"
-              size="small"
+              size="large"
             >Whatsapp</BasicButton>
           </div>
         </div>

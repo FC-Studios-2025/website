@@ -6,17 +6,19 @@ import VideoCarousel from "../components/ReelVideoCarousel";
 import ReelVideoCarousel from "../components/ReelVideoCarousel";
 import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
+import Footer from "../components/Footer";
 
 const Landing = () => {
   return (
     <div className="flex flex-col items-center bg-black min-h-screen w-full">
+      
       {/* Navigation bar - full width */}
       <div className="w-full">
         <NavBar />
       </div>
 
       {/* Main content container with responsive max-width */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8">
+      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl px-4 sm:px-6 md:px-8">
         {/* Hero video section */}
         <div className="relative w-full h-auto aspect-video">
           <video
@@ -36,13 +38,14 @@ const Landing = () => {
 
         {/* Description text */}
         <div className="text-white font-light text-center md:text-2xl lg:text-3xl mt-12">
-          By collaborating with Film Craft Studios, you'll enjoy numerous benefits
-          that will elevate your brand's success 💯 to new heights. At Film Craft
-          Studios, our bespoke video editing 📽️ and content creation 📝 services
-          are designed to unlock 🔓 the full potential of your ideas 💡,
-          transforming them into compelling visual narratives. With our expertise,
-          your brand 🌿 will effortlessly stand out, engaging audiences 😊 with
-          professionally edited videos that leave a lasting impact 💖.
+          By collaborating with Film Craft Studios, you'll enjoy numerous
+          benefits that will elevate your brand's success 💯 to new heights. At
+          Film Craft Studios, our bespoke video editing 📽️ and content creation
+          📝 services are designed to unlock 🔓 the full potential of your ideas
+          💡, transforming them into compelling visual narratives. With our
+          expertise, your brand 🌿 will effortlessly stand out, engaging
+          audiences 😊 with professionally edited videos that leave a lasting
+          impact 💖.
         </div>
 
         {/* Why Choose Us section */}
@@ -82,21 +85,21 @@ const Landing = () => {
 
       {/* Video carousels - full width sections */}
       <div className=" text-white py-16">
-      <div className="font-bold text-xl md:text-2xl lg:text-4xl">
-            <h2>
-              Reel <span className="italic font-light">Video</span>
-            </h2>
-          </div>
+        <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
+          <h2>
+            Reel <span className="italic font-light">Video</span>
+          </h2>
+        </div>
         <ReelVideoCarousel></ReelVideoCarousel>
       </div>
-      <div className="text-white py-16">
-      <div className="font-bold text-xl md:text-2xl lg:text-4xl">
-            <h2>
-              Motion <span className="italic font-light">Video</span>
-            </h2>
-          </div>
+      {/* <div className="text-white py-16">
+        <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+          <h2>
+            Motion <span className="italic font-light">Video</span>
+          </h2>
+        </div>
         <SqVideoCarousel></SqVideoCarousel>
-      </div>
+      </div> */}
 
       {/* Back to constrained width for pricing section */}
       <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8">
@@ -114,8 +117,8 @@ const Landing = () => {
             </div>
             <div className="pb-8">
               <div className="font-bold md:text-2xl">Transparent Pricing</div>
-              No hidden fees—what you see is what you get with our straightforward
-              pricing.
+              No hidden fees—what you see is what you get with our
+              straightforward pricing.
             </div>
             <div>
               <div className="font-bold md:text-2xl">Expert Support</div>
@@ -129,6 +132,9 @@ const Landing = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-white w-full">
+        <Footer />
       </div>
     </div>
   );
