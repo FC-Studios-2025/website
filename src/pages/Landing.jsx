@@ -92,14 +92,14 @@ const Landing = () => {
         </div>
         <ReelVideoCarousel></ReelVideoCarousel>
       </div>
-      {/* <div className="text-white py-16">
+      <div className="text-white py-16">
         <div className="font-bold text-xl md:text-2xl lg:text-4xl">
           <h2>
             Motion <span className="italic font-light">Video</span>
           </h2>
         </div>
         <SqVideoCarousel></SqVideoCarousel>
-      </div> */}
+      </div>
 
       {/* Back to constrained width for pricing section */}
       <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8">

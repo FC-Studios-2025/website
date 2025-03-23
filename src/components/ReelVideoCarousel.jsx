@@ -219,7 +219,7 @@ const ReelVideoCarousel = () => {
       // On tablet, maintain aspect ratio but with a max height
       return {
         aspectRatio: "9/16",
-        maxHeight: "60vh",
+        maxHeight: "70vh",
         width: "auto",
         margin: "0 auto"
       };
@@ -277,7 +277,7 @@ const ReelVideoCarousel = () => {
             1024: { slidesPerView: 1.8, spaceBetween: 16 },
             1280: { slidesPerView: 2.2, spaceBetween: 16 },
           }}
-          className="w-xs lg:w-full"
+          className="w-xs md:w-xl lg:w-full"
         >
           {videoData.map((video, index) => (
             <SwiperSlide key={video.id} className="flex justify-center py-2 sm:py-3 md:py-4 lg:py-6">

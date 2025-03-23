@@ -206,12 +206,14 @@ const SqVideoCarousel = () => {
           modules={[Navigation, Autoplay]}
           onSlideChange={handleSlideChange}
           breakpoints={{
-            640: { slidesPerView: 1.5 },
+            320: { slidesPerView: 1.2 },
+            480: { slidesPerView: 1.4 },
+            640: { slidesPerView: 1.6 },
             768: { slidesPerView: 1.8 },
             1024: { slidesPerView: 2.2 },
             1280: { slidesPerView: 2.5 },
           }}
-          className="w-full"
+          className="w-xs md:w-xl lg:w-full"
         >
           {videoData.map((video, index) => (
             <SwiperSlide key={video.id} className="flex justify-center py-8">
