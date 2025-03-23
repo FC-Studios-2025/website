@@ -280,11 +280,31 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height]
       }
     }
+    
+    // Get screen size
+    const isSmall = this.screen.width < 640;  // sm breakpoint
+    const isMedium = this.screen.width >= 640 && this.screen.width < 768;  // md breakpoint
+    
+    // Adjust scale based on screen size
+    let heightScale = 1000;
+    let widthScale = 750;
+    
+    if (isSmall) {
+      heightScale = 650;  // smaller height for mobile
+      widthScale = 450;   // smaller width for mobile
+    } else if (isMedium) {
+      heightScale = 950;  // medium height for tablets
+      widthScale = 750;   // medium width for tablets
+    }
+    
     this.scale = this.screen.height / 1500
-    this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height
-    this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width
+    this.plane.scale.y = (this.viewport.height * (heightScale * this.scale)) / this.screen.height
+    this.plane.scale.x = (this.viewport.width * (widthScale * this.scale)) / this.screen.width
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y]
-    this.padding = 2
+    
+    // Adjust padding for different screen sizes
+    this.padding = isSmall ? 1 : (isMedium ? 1.5 : 2);
+    
     this.width = this.plane.scale.x + this.padding
     this.widthTotal = this.width * this.length
     this.x = this.width * this.index
@@ -297,12 +317,20 @@ class App {
     this.container = container
     this.scroll = { ease: 0.05, current: 0, target: 0, last: 0 }
     this.onCheckDebounce = debounce(this.onCheck, 200)
+    
+    // Create renderer, camera, and scene first
     this.createRenderer()
     this.createCamera()
     this.createScene()
+    
+    // Calculate viewport and screen dimensions
     this.onResize()
+    
+    // Create geometry and media items after dimensions are established
     this.createGeometry()
     this.createMedias(items, bend, textColor, borderRadius, font)
+    
+    // Start the update loop and add event listeners
     this.update()
     this.addEventListeners()
   }
@@ -389,19 +417,33 @@ class App {
     this.scroll.target = this.scroll.target < 0 ? -item : item
   }
   onResize() {
+    // Make sure container exists
+    if (!this.container) return;
+    
     this.screen = {
       width: this.container.clientWidth,
       height: this.container.clientHeight
     }
-    this.renderer.setSize(this.screen.width, this.screen.height)
-    this.camera.perspective({
-      aspect: this.screen.width / this.screen.height
-    })
-    const fov = (this.camera.fov * Math.PI) / 180
-    const height = 2 * Math.tan(fov / 2) * this.camera.position.z
-    const width = height * this.camera.aspect
-    this.viewport = { width, height }
-    if (this.medias) {
+    
+    // Make sure the renderer exists
+    if (this.renderer) {
+      this.renderer.setSize(this.screen.width, this.screen.height)
+    }
+    
+    // Make sure camera exists
+    if (this.camera) {
+      this.camera.perspective({
+        aspect: this.screen.width / this.screen.height
+      })
+      
+      const fov = (this.camera.fov * Math.PI) / 180
+      const height = 2 * Math.tan(fov / 2) * this.camera.position.z
+      const width = height * this.camera.aspect
+      this.viewport = { width, height }
+    }
+    
+    // Only update medias if they exist
+    if (this.medias && this.screen && this.viewport) {
       this.medias.forEach((media) =>
         media.onResize({ screen: this.screen, viewport: this.viewport })
       )
