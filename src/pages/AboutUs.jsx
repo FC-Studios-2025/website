@@ -1,8 +1,12 @@
 import React from 'react';
+import NavBar from '../components/NavBar';
 
 const AboutUs = () => {
   return (
     <div className="min-h-screen bg-black text-white">
+      <div>
+        <NavBar/>
+      </div>
       {/* Header Section */}
       <div className="relative bg-gradient-to-b from-gray-900 to-black py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

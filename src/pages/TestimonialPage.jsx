@@ -2,16 +2,20 @@ import React from 'react';
 import FeaturedTestimonial from '../components/FeaturedTestimonial';
 import Testimonials from '../components/Testimonials';
 import TestimonialSlider from '../components/TestimonialSlider';
+import NavBar from '../components/NavBar';
 
 const TestimonialsPage = () => {
   return (
     <div className="bg-white">
+      <div>
+        <NavBar/>
+      </div>
       {/* Hero Section */}
       <div className="relative bg-blue-600 py-32">
         <div className="absolute inset-0 overflow-hidden">
           <img 
-            src="/images/testimonials-hero.jpg" 
-            alt="Film production background" 
+            src="../assets/arrangement-movie-elements-black-background.jpg"
+            alt="Film production backgrounds"
             className="w-full h-full object-cover opacity-20"
           />
         </div>

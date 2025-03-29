@@ -1,24 +1,31 @@
 import React from "react";
 import NavBar from "../components/NavBar";
-import ScrollFloat from "../components/ScrollFloatText";
 import CircularGallery from "../components/CircularGallery";
-import VideoCarousel from "../components/ReelVideoCarousel";
 import ReelVideoCarousel from "../components/ReelVideoCarousel";
 import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
+import BlurredCircle from "../components/BlurredCircle";
 
 const Landing = () => {
   return (
     <div className="flex flex-col items-center bg-black min-h-screen w-full">
-      
+      <BlurredCircle
+  color="bg-green-400"
+  positionClass="top-[-50%] left-[10%] translate-x-[30%] translate-y-[50%]"
+/>
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[-50%] left-[30%] translate-x-[50%] translate-y-[50%]"
+      />
+
       {/* Navigation bar - full width */}
       <div className="w-full">
         <NavBar />
       </div>
 
       {/* Main content container with responsive max-width */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl px-4 sm:px-6 md:px-8">
+      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl px-4 sm:px-6 md:px-8 mt-24">
         {/* Hero video section */}
         <div className="relative w-full h-auto aspect-video">
           <video
