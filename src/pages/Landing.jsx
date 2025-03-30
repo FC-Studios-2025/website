@@ -74,7 +74,7 @@ const SlideInView = ({
 
 const Landing = () => {
   return (
-    <div className="flex flex-col items-center bg-black min-h-screen w-full overflow-hidden">
+    <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
       <BlurredCircle
         color="bg-blue-400"
         positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"

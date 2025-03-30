@@ -1,5 +1,6 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const AboutUs = () => {
   return (
@@ -8,7 +9,7 @@ const AboutUs = () => {
         <NavBar/>
       </div>
       {/* Header Section */}
-      <div className="relative bg-gradient-to-b from-gray-900 to-black py-32">
+      <div className="relative py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold mb-6 flex items-center">
             About
@@ -57,7 +58,7 @@ const AboutUs = () => {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-16 bg-gray-900">
+      <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-10">Our Services</h2>
           
@@ -195,105 +196,10 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section className="py-16 bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-12">Meet Our Team</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Team Member 1 */}
-            <div className="bg-black bg-opacity-50 rounded-lg overflow-hidden transition-transform hover:scale-105">
-              <div className="h-64 bg-gray-700"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">Sarah Johnson</h3>
-                <p className="text-teal-400 mb-3">Creative Director</p>
-                <p className="text-gray-300">With over 10 years in film production, Sarah brings creative vision and technical expertise to every project.</p>
-              </div>
-            </div>
-            
-            {/* Team Member 2 */}
-            <div className="bg-black bg-opacity-50 rounded-lg overflow-hidden transition-transform hover:scale-105">
-              <div className="h-64 bg-gray-700"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">Michael Chen</h3>
-                <p className="text-teal-400 mb-3">Lead Editor</p>
-                <p className="text-gray-300">Michael's attention to detail and masterful editing techniques transform raw footage into cinematic experiences.</p>
-              </div>
-            </div>
-            
-            {/* Team Member 3 */}
-            <div className="bg-black bg-opacity-50 rounded-lg overflow-hidden transition-transform hover:scale-105">
-              <div className="h-64 bg-gray-700"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">Alex Rivera</h3>
-                <p className="text-teal-400 mb-3">Motion Graphics Artist</p>
-                <p className="text-gray-300">Alex specializes in creating stunning visual effects and animated elements that bring stories to life.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <p className="text-lg text-gray-300">
-              Our talented team of creative professionals is dedicated to delivering exceptional results 
-              that exceed your expectations.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-16 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold mb-10">What Our Clients Say</h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-gray-900 p-8 rounded-lg border-l-4 border-teal-400">
-              <p className="text-gray-300 mb-6 italic">
-                "Film Craft Studios transformed our brand vision into a compelling visual narrative. 
-                Their attention to detail and creative approach exceeded our expectations."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-700 rounded-full"></div>
-                <div className="ml-4">
-                  <p className="font-semibold">David Turner</p>
-                  <p className="text-sm text-gray-400">CEO, Vertex Marketing</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Testimonial 2 */}
-            <div className="bg-gray-900 p-8 rounded-lg border-l-4 border-teal-400">
-              <p className="text-gray-300 mb-6 italic">
-                "Working with Film Craft Studios was a game-changer for our product launch. 
-                Their promotional video captured the essence of our brand and resonated with our audience."
-              </p>
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-gray-700 rounded-full"></div>
-                <div className="ml-4">
-                  <p className="font-semibold">Emily Zhao</p>
-                  <p className="text-sm text-gray-400">Marketing Director, TechVision</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact CTA Section */}
-      <section className="py-20 bg-gradient-to-t from-black to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Bring Your Vision to Life?</h2>
-          <p className="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-            Get in touch with our team today to discuss your project and discover how 
-            Film Craft Studios can transform your ideas into captivating visual stories.
-          </p>
-          <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 px-8 rounded-full transition-colors">
-            Contact Us
-          </button>
-        </div>
-      </section>
+      <div>
+        <Footer/>
+      </div>
+      
     </div>
   );
 };

@@ -6,9 +6,7 @@ import AboutUs from "./pages/AboutUs";
 function App() {
   return (
     <div>
-      {/* <Landing/> */}
-      {/* <TestimonialsPage/> */}
-      {/* <AboutUs/> */}
+      
     </div>
   );
 }
