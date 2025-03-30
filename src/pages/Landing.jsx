@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import NavBar from "../components/NavBar";
 import CircularGallery from "../components/CircularGallery";
 import ReelVideoCarousel from "../components/ReelVideoCarousel";
@@ -7,16 +9,97 @@ import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
 import BlurredCircle from "../components/BlurredCircle";
 
+// Fade-in animation component
+const FadeInView = ({
+  children,
+  delay = 0,
+  duration = 0.5,
+  className = "",
+}) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+      transition={{ duration, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+// Slide-in animation component
+const SlideInView = ({
+  children,
+  direction = "left",
+  delay = 0,
+  duration = 0.5,
+  className = "",
+}) => {
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: direction === "left" ? -50 : direction === "right" ? 50 : 0,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={variants}
+      transition={{ duration, delay }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 const Landing = () => {
   return (
-    <div className="flex flex-col items-center bg-black min-h-screen w-full">
-      <BlurredCircle
-  color="bg-green-400"
-  positionClass="top-[-50%] left-[10%] translate-x-[30%] translate-y-[50%]"
-/>
+    <div className="flex flex-col items-center bg-black min-h-screen w-full overflow-hidden">
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="top-[-50%] left-[30%] translate-x-[50%] translate-y-[50%]"
+        positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[60%] right-0 translate-x-[50%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg: lg:top-[180%] lg:-translate-x-[50%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[180%] right-0 translate-x-[50%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[260%] left-0 -translate-x-[50%] md:top-[380%] lg: lg:top-[400%] lg:-translate-x-[50%]"
       />
 
       {/* Navigation bar - full width */}
@@ -27,119 +110,172 @@ const Landing = () => {
       {/* Main content container with responsive max-width */}
       <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-16 md:mt-24">
         {/* Hero video section */}
-        <div className="relative aspect-video">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-0 left-0 w-full h-auto object-cover rounded-sm"
-            onEnded={(e) => e.target.play()}
-          >
-            <source
-              src="https://res.cloudinary.com/dragkodnu/video/upload/v1743306230/Rectangle%20Videos/fp2rmpv19sccnxkaku7m.mp4"
-              type="video/mp4"
-            />
-          </video>
-        </div>
+        <FadeInView duration={0.8}>
+          <div className="relative aspect-video">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute top-0 left-0 w-full h-auto object-cover rounded-sm"
+              onEnded={(e) => e.target.play()}
+            >
+              <source
+                src="https://res.cloudinary.com/dragkodnu/video/upload/v1743306230/Rectangle%20Videos/fp2rmpv19sccnxkaku7m.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </FadeInView>
 
         {/* Description text */}
-        <div className="text-white font-light text-center md:text-2xl lg:text-3xl mt-12">
-          By collaborating with Film Craft Studios, you'll enjoy numerous
-          benefits that will elevate your brand's success 💯 to new heights. At
-          Film Craft Studios, our bespoke video editing 📽️ and content creation
-          📝 services are designed to unlock 🔓 the full potential of your ideas
-          💡, transforming them into compelling visual narratives. With our
-          expertise, your brand 🌿 will effortlessly stand out, engaging
-          audiences 😊 with professionally edited videos that leave a lasting
-          impact 💖.
-        </div>
+        <FadeInView delay={0.3} duration={0.7}>
+          <div className="text-white font-light text-center md:text-2xl lg:text-3xl mt-12">
+            By collaborating with Film Craft Studios, you'll enjoy numerous
+            benefits that will elevate your brand's success 💯 to new heights.
+            At Film Craft Studios, our bespoke video editing 📽️ and content
+            creation 📝 services are designed to unlock 🔓 the full potential of
+            your ideas 💡, transforming them into compelling visual narratives.
+            With our expertise, your brand 🌿 will effortlessly stand out,
+            engaging audiences 😊 with professionally edited videos that leave a
+            lasting impact 💖.
+          </div>
+        </FadeInView>
 
         {/* Why Choose Us section */}
         <div className="py-16 text-white font-bold text-xl md:text-2xl lg:text-4xl">
-          <h2>
-            Why Choose Film Craft{" "}
-            <span className="italic font-light">Studios</span> ?
-          </h2>
+          <FadeInView>
+            <h2>
+              Why Choose Film Craft{" "}
+              <span className="italic font-light">Studios</span> ?
+            </h2>
+          </FadeInView>
 
           {/* Grid Container */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
             {/* First Row (Using First 2 Columns) */}
-            <div className="md:col-span-2 bg-gray-800 p-6 rounded-lg">
-              Feature 1
-            </div>
+            <SlideInView direction="left" className="md:col-span-2">
+              <div className="bg-gray-800 p-6 rounded-lg">Feature 1</div>
+            </SlideInView>
             <div className="hidden md:block"></div> {/* Empty grid space */}
             {/* Second Row (Using Last 2 Columns) */}
             <div className="hidden md:block"></div> {/* Empty grid space */}
-            <div className="md:col-span-2 bg-gray-800 p-6 rounded-lg">
-              Feature 2
-            </div>
+            <SlideInView
+              direction="right"
+              delay={0.2}
+              className="md:col-span-2"
+            >
+              <div className="bg-gray-800 p-6 rounded-lg">Feature 2</div>
+            </SlideInView>
           </div>
         </div>
 
         {/* Enchant Your Audience section */}
         <div className="text-white py-16">
-          <div className="font-bold text-xl md:text-2xl lg:text-4xl">
-            <h2>
-              Enchant Your <span className="italic font-light">Audience</span>
-            </h2>
-          </div>
-          <div style={{ height: "45vh", position: "relative" }}>
-            <CircularGallery bend={1} textColor="#ffffff" borderRadius={0.05} />
-          </div>
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Enchant Your <span className="italic font-light">Audience</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <div style={{ height: "45vh", position: "relative" }}>
+              <CircularGallery
+                bend={1}
+                textColor="#ffffff"
+                borderRadius={0.05}
+              />
+            </div>
+          </FadeInView>
         </div>
-      </div>
 
-      {/* Video carousels - full width sections */}
-      <div className=" text-white py-16">
-        <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
-          <h2>
-            Reel <span className="italic font-light">Video</span>
-          </h2>
-        </div>
-        <ReelVideoCarousel></ReelVideoCarousel>
-      </div>
-      <div className="text-white py-16">
-        <div className="font-bold text-xl md:text-2xl lg:text-4xl">
-          <h2>
-            Motion <span className="italic font-light">Video</span>
-          </h2>
-        </div>
-        <SqVideoCarousel></SqVideoCarousel>
-      </div>
-
-      {/* Back to constrained width for pricing section */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8">
+        {/* Video carousels - full width sections */}
         <div className="text-white py-16">
-          <div className="text-xl md:text-2xl lg:text-4xl font-bold">
-            <h2>
-              Custom <span className="italic font-light">Pricing</span>
-            </h2>
-          </div>
-          <div className="text-center md:text-2xl p-8 my-16 border rounded-xl font-light">
-            <div className="pb-8">
-              <div className="font-bold md:text-2xl">Flexible Options</div>
-              Tailor your package to suit your specific project requirements and
-              goals.
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
+              <h2>
+                Reel <span className="italic font-light">Video</span>
+              </h2>
             </div>
-            <div className="pb-8">
-              <div className="font-bold md:text-2xl">Transparent Pricing</div>
-              No hidden fees—what you see is what you get with our
-              straightforward pricing.
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <ReelVideoCarousel />
+          </FadeInView>
+        </div>
+
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Motion <span className="italic font-light">Video</span>
+              </h2>
             </div>
-            <div>
-              <div className="font-bold md:text-2xl">Expert Support</div>
-              Our team is here to assist you every step of the way.
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <SqVideoCarousel />
+          </FadeInView>
+        </div>
+        {/* </div> */}
+
+        {/* Back to constrained width for pricing section */}
+        {/* <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8"> */}
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="text-xl md:text-2xl lg:text-4xl font-bold">
+              <h2>
+                Custom <span className="italic font-light">Pricing</span>
+              </h2>
             </div>
-            <div className="py-8">
-              <hr />
+          </FadeInView>
+
+          <FadeInView delay={0.3} duration={0.8}>
+            <div className="text-center md:text-2xl p-8 my-16 border rounded-xl font-light">
+              <motion.div
+                className="pb-8"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="font-bold md:text-2xl">Flexible Options</div>
+                Tailor your package to suit your specific project requirements
+                and goals.
+              </motion.div>
+
+              <motion.div
+                className="pb-8"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="font-bold md:text-2xl">Transparent Pricing</div>
+                No hidden fees—what you see is what you get with our
+                straightforward pricing.
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="font-bold md:text-2xl">Expert Support</div>
+                Our team is here to assist you every step of the way.
+              </motion.div>
+
+              <div className="py-8">
+                <hr />
+              </div>
+
+              <div className="flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <BasicButton>Get Details</BasicButton>
+                </motion.div>
+              </div>
             </div>
-            <div className="flex justify-center">
-              <BasicButton>Get Details</BasicButton>
-            </div>
-          </div>
+          </FadeInView>
         </div>
       </div>
+
       <div className="text-white w-full">
         <Footer />
       </div>

@@ -12,14 +12,16 @@ const BlurredCircle = ({
       className={`
         absolute 
         rounded-[100%]
+        max-w-screen
+        
         ${color}
         ${zIndex}
         ${positionClass}
         
         /* Small screens (default) */
-        w-[300px] 
-        h-[200px] 
-        blur-[180px]
+        w-[150px] 
+        h-[150px] 
+        blur-[80px]
         
         /* Medium screens */
         md:w-[400px] 
@@ -29,7 +31,7 @@ const BlurredCircle = ({
         /* Large screens */
         lg:w-[560px] 
         lg:h-[400px]
-        lg:blur-[180px]
+        lg:blur-[220px]
         ${className}
       `}
     ></div>
