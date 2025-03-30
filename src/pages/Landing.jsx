@@ -25,9 +25,9 @@ const Landing = () => {
       </div>
 
       {/* Main content container with responsive max-width */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-7xl px-4 sm:px-6 md:px-8 mt-24">
+      <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-16 md:mt-24">
         {/* Hero video section */}
-        <div className="relative w-full h-auto aspect-video">
+        <div className="relative aspect-video">
           <video
             autoPlay
             loop
@@ -37,7 +37,7 @@ const Landing = () => {
             onEnded={(e) => e.target.play()}
           >
             <source
-              src="https://res.cloudinary.com/dgwxaup3v/video/upload/v1741803762/nw8051j68aiit9dmjpd5.mp4"
+              src="https://res.cloudinary.com/dragkodnu/video/upload/v1743306230/Rectangle%20Videos/fp2rmpv19sccnxkaku7m.mp4"
               type="video/mp4"
             />
           </video>
