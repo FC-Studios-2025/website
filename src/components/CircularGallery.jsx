@@ -37,8 +37,8 @@ function createTextTexture(gl, text, font = "bold 30px monospace", color = "blac
   const metrics = context.measureText(text)
   const textWidth = Math.ceil(metrics.width)
   const textHeight = Math.ceil(parseInt(font, 10) * 1.2)
-  canvas.width = textWidth + 20
-  canvas.height = textHeight + 20
+  canvas.width = textWidth
+  canvas.height = textHeight
   context.font = font
   context.fillStyle = color
   context.textBaseline = "middle"
@@ -287,7 +287,7 @@ class Media {
     
     // Adjust scale based on screen size
     let heightScale = 1000;
-    let widthScale = 750;
+    let widthScale = 800;
     
     if (isSmall) {
       heightScale = 650;  // smaller height for mobile

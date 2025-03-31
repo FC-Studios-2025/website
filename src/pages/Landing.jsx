@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NavBar from "../components/NavBar";
@@ -7,7 +6,6 @@ import ReelVideoCarousel from "../components/ReelVideoCarousel";
 import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
-import BlurredCircle from "../components/BlurredCircle";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -75,18 +73,16 @@ const SlideInView = ({
 const Landing = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
-      
-
       {/* Navigation bar - full width */}
       <div className="w-full">
         <NavBar />
       </div>
 
       {/* Main content container with responsive max-width */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-16 md:mt-24">
+      <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
         {/* Hero video section */}
         <FadeInView duration={0.8}>
-          <div className="relative aspect-video">
+          <div className="relative aspect-video shadow-lg shadow-gray-500">
             <video
               autoPlay
               loop
@@ -179,7 +175,7 @@ const Landing = () => {
           </FadeInView>
         </div>
 
-        <div className="text-white py-16">
+        <div className="text-white">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
               <h2>
@@ -191,11 +187,8 @@ const Landing = () => {
             <SqVideoCarousel />
           </FadeInView>
         </div>
-        {/* </div> */}
-
-        {/* Back to constrained width for pricing section */}
-        {/* <div className="w-full max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-4xl xl:max-w-6xl px-4 sm:px-6 md:px-8"> */}
-        <div className="text-white py-16">
+        
+        <div className="text-white">
           <FadeInView>
             <div className="text-xl md:text-2xl lg:text-4xl font-bold">
               <h2>
@@ -205,13 +198,13 @@ const Landing = () => {
           </FadeInView>
 
           <FadeInView delay={0.3} duration={0.8}>
-            <div className="text-center md:text-2xl p-8 my-16 border rounded-xl font-light">
+            <div className="text-center md:text-2xl p-8 my-10 border rounded-xl font-light shadow-lg shadow-gray-700 text-gray-300">
               <motion.div
                 className="pb-8"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl">Flexible Options</div>
+                <div className="font-bold md:text-2xl text-white">Flexible Options</div>
                 Tailor your package to suit your specific project requirements
                 and goals.
               </motion.div>
@@ -221,7 +214,7 @@ const Landing = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl">Transparent Pricing</div>
+                <div className="font-bold md:text-2xl text-white">Transparent Pricing</div>
                 No hidden fees—what you see is what you get with our
                 straightforward pricing.
               </motion.div>
@@ -230,7 +223,7 @@ const Landing = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl">Expert Support</div>
+                <div className="font-bold md:text-2xl text-white">Expert Support</div>
                 Our team is here to assist you every step of the way.
               </motion.div>
 

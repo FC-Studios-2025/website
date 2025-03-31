@@ -203,7 +203,7 @@ const SqVideoCarousel = () => {
           onClick={() => swiperRef.current?.swiper?.slidePrev()}
           aria-label="Previous video"
         >
-          <FaChevronLeft size={16} />
+          <FaChevronLeft size={14} />
         </button>
 
         <button
@@ -211,13 +211,13 @@ const SqVideoCarousel = () => {
           onClick={() => swiperRef.current?.swiper?.slideNext()}
           aria-label="Next video"
         >
-          <FaChevronRight size={16} />
+          <FaChevronRight size={14} />
         </button>
 
         <Swiper
           ref={swiperRef}
           slidesPerView={1.2}
-          spaceBetween={16}
+          spaceBetween={10}
           centeredSlides={true}
           loop={true}
           speed={600}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import FilmCraftStudiosLogo from "../assets/FilmCraftStudiosLogo.svg";
+import FCSlogo from "../assets/FCSlogo.png"
 import { FaEnvelope, FaWhatsapp, FaTimes } from "react-icons/fa";
 import BasicButton from "./BasicButton";
 import { Link } from "react-router-dom";
@@ -74,7 +74,7 @@ const NavBar = () => {
           <Link to="/">
             <div className="flex gap-2 items-center">
               <div className="h-10 w-10 md:h-14 md:w-14">
-                <img src={FilmCraftStudiosLogo} alt="FilmCraftStudiosLogo" />
+                <img src={FCSlogo} alt="FilmCraftStudiosLogo" />
               </div>
               <div className="text-lg md:text-2xl lg:text-3xl font-bold flex gap-1.5">
                 Film Craft <span className="font-light italic">Studios</span>
@@ -86,8 +86,16 @@ const NavBar = () => {
             <div className="flex gap-6">
               <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                 <Link
+                  to="/"
+                  className="text-gray-300 hover:text-white transition-colors ease-in-out"
+                >
+                  Home
+                </Link>
+              </div>
+              <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
+                <Link
                   to="/about"
-                  className="text-gray-400 hover:text-white transition-colors ease-in-out"
+                  className="text-gray-300 hover:text-white transition-colors ease-in-out"
                 >
                   About Us
                 </Link>
@@ -95,7 +103,7 @@ const NavBar = () => {
               <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                 <Link
                   to="/works"
-                  className="text-gray-400 hover:text-white transition-colors ease-in-out"
+                  className="text-gray-300 hover:text-white transition-colors ease-in-out"
                 >
                   Our Works
                 </Link>
@@ -103,7 +111,7 @@ const NavBar = () => {
               <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
                 <Link
                   to="/testimonials"
-                  className="text-gray-400 hover:text-white transition-colors ease-in-out"
+                  className="text-gray-300 hover:text-white transition-colors ease-in-out"
                 >
                   Testimonials
                 </Link>
@@ -175,7 +183,7 @@ const NavBar = () => {
             <Link to="/" onClick={() => setMobileMenuOpen(false)}>
               <div className="flex gap-2 items-center">
                 <div className="h-10 w-10">
-                  <img src={FilmCraftStudiosLogo} alt="FilmCraftStudiosLogo" />
+                  <img src={FCSlogo} alt="FilmCraftStudiosLogo" />
                 </div>
                 <div className="text-lg font-bold flex gap-1.5">
                   Film Craft <span className="font-light italic">Studios</span>
@@ -193,22 +201,29 @@ const NavBar = () => {
           
           <div className="flex flex-col space-y-6">
             <Link
+              to="/"
+              className="text-gray-300 hover:text-white transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
               to="/about"
-              className="text-gray-400 hover:text-white transition-colors py-2 text-lg"
+              className="text-gray-300 hover:text-white transition-colors py-2 text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
             <Link
               to="/works"
-              className="text-gray-400 hover:text-white transition-colors py-2 text-lg"
+              className="text-gray-300 hover:text-white transition-colors py-2 text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Our Works
             </Link>
             <Link
               to="/testimonials"
-              className="text-gray-400 hover:text-white transition-colors py-2 text-lg"
+              className="text-gray-300 hover:text-white transition-colors py-2 text-lg"
               onClick={() => setMobileMenuOpen(false)}
             >
               Testimonials
