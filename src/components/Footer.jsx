@@ -13,10 +13,10 @@ const Footer = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span><img className="h-10 w-10" src={FCSlogo} alt="FilmCraftStudiosLogo" /></span>
-                <h3 className="font-medium">Film Craft Studios</h3>
+                <h3 className="font-medium text-white">Film Craft Studios</h3>
               </div>
               <p className="text-gray-400 text-sm">
-                Creating compelling visual narratives that elevate your brand to
+                Creating compelling visual narratives that <br/> elevate your brand to
                 new heights.
               </p>
             </div>

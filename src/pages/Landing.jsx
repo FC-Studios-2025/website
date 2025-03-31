@@ -6,6 +6,7 @@ import ReelVideoCarousel from "../components/ReelVideoCarousel";
 import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
+import BlurredCircle from "../components/BlurredCircle";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -73,6 +74,42 @@ const SlideInView = ({
 const Landing = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[60%] right-[0%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg: lg:top-[180%] lg:-translate-x-[50%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[180%] right-[0%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[260%] left-0 -translate-x-[50%] md:top-[380%] lg: lg:top-[400%] lg:-translate-x-[50%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[320%] right-[0%] md:hidden"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[400%] left-0 -translate-x-[50%] md:hidden"
+      />
+
       {/* Navigation bar - full width */}
       <div className="w-full">
         <NavBar />
@@ -187,7 +224,7 @@ const Landing = () => {
             <SqVideoCarousel />
           </FadeInView>
         </div>
-        
+
         <div className="text-white">
           <FadeInView>
             <div className="text-xl md:text-2xl lg:text-4xl font-bold">
@@ -204,7 +241,9 @@ const Landing = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl text-white">Flexible Options</div>
+                <div className="font-bold md:text-2xl text-white">
+                  Flexible Options
+                </div>
                 Tailor your package to suit your specific project requirements
                 and goals.
               </motion.div>
@@ -214,7 +253,9 @@ const Landing = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl text-white">Transparent Pricing</div>
+                <div className="font-bold md:text-2xl text-white">
+                  Transparent Pricing
+                </div>
                 No hidden fees—what you see is what you get with our
                 straightforward pricing.
               </motion.div>
@@ -223,7 +264,9 @@ const Landing = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="font-bold md:text-2xl text-white">Expert Support</div>
+                <div className="font-bold md:text-2xl text-white">
+                  Expert Support
+                </div>
                 Our team is here to assist you every step of the way.
               </motion.div>
 

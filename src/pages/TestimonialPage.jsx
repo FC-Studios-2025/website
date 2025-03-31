@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "../components/NavBar";
 import TestimonialSlider from "../components/TestimonialSlider";
 import Footer from "../components/Footer";
+import BlurredCircle from "../components/BlurredCircle";
 
 const TestimonialsPage = () => {
   // Sample testimonial data - replace with your actual data
@@ -38,22 +39,45 @@ const TestimonialsPage = () => {
 
   return (
     <div className="flex flex-col items-center min-h-screen w-full text-white overflow-hidden">
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[60%] right-[0%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg: lg:top-[180%] lg:-translate-x-[50%]"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[180%] right-[0%] md:hidden"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[260%] left-0 -translate-x-[50%] md:hidden"
+      />
+      {/*  */}
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[320%] right-[0%] md:hidden"
+      />
+
       <div className="w-full">
         <NavBar />
       </div>
 
       {/* Main Content */}
-      <main className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-6xl px-4 sm:px-6 md:px-8 mx-auto mt-26 md:mt-30">
+      <main className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-6xl px-4 sm:px-6 md:px-8 mx-auto mt-20 md:mt-28">
         <section className="mb-16">
-          <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold mb-6 flex items-center">
-            Client
-            <span className="px-2 text-teal-400 font-bold">Reviews</span>
-          </h1>
-          <p className="text-xl max-w-3xl">
-            Hear what our clients have to say about their experience working
-            with Film Craft Studios.
-          </p>
-
           <section>
             <TestimonialSlider />
           </section>
@@ -111,7 +135,7 @@ const TestimonialsPage = () => {
 
       {/* Footer */}
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </div>
   );
