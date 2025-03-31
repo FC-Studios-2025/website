@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {/*  */}
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="top-[60%] right-0 translate-x-[50%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
+        positionClass="top-[60%] right-[0%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
       />
       <BlurredCircle
         color="bg-green-400"
@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       {/*  */}
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="top-[180%] right-0 translate-x-[50%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
+        positionClass="top-[180%] right-[0%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
       />
       <BlurredCircle
         color="bg-green-400"

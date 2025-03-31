@@ -21,7 +21,7 @@ const BlurredCircle = ({
         /* Small screens (default) */
         w-[150px] 
         h-[150px] 
-        blur-[80px]
+        blur-[100px]
         
         /* Medium screens */
         md:w-[400px] 

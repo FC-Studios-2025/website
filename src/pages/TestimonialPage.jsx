@@ -6,32 +6,26 @@ import NavBar from '../components/NavBar';
 
 const TestimonialsPage = () => {
   return (
-    <div className="bg-white">
+    <div>
       <div>
         <NavBar/>
       </div>
       {/* Hero Section */}
-      <div className="relative bg-blue-600 py-32">
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src="../assets/arrangement-movie-elements-black-background.jpg"
-            alt="Film production backgrounds"
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative py-32">
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-white mb-6">Testimonials</h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl">
             Discover why clients trust Film Craft Studios to bring their vision to life through stunning visuals and creative storytelling.
           </p>
         </div>
       </div>
 
       {/* Featured Testimonial */}
-      <FeaturedTestimonial/>
+      {/* <FeaturedTestimonial/> */}
 
       {/* Testimonial Grid */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* Video Testimonial */}
       {/* <VideoTestimonialSection /> */}
