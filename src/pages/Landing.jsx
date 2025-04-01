@@ -7,6 +7,7 @@ import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
 import BlurredCircle from "../components/BlurredCircle";
+import ContactForm from "../components/ContactForm";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -284,6 +285,13 @@ const Landing = () => {
               </div>
             </div>
           </FadeInView>
+        </div>
+        <div>
+          <div className="text-white mt-20">
+            <FadeInView>
+              <ContactForm />
+            </FadeInView>
+          </div>
         </div>
       </div>
 
