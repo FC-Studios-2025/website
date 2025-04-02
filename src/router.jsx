@@ -1,11 +1,11 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 import Landing from './pages/Landing';
 import AboutUs from './pages/AboutUs';
 import TestimonialsPage from './pages/TestimonialPage';
 import Works from './pages/Works';
 // Import other pages as needed
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Landing />,
