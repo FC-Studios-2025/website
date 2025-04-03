@@ -39,6 +39,18 @@ function ContactForm() {
               className="w-full p-2 mb-3 border border-gray-600 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
           </div>
+          <div className="w-full">
+            <label htmlFor="contact" className="block text-gray-300 mb-1">
+              Contact
+            </label>
+            <input
+              id="contact"
+              type="tel"
+              name="contact"
+              required
+              className="w-full p-2 mb-3 border border-gray-600 rounded-md bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
           {/* Email Field */}
           <div className="w-full">
             <label htmlFor="email" className="block text-gray-300 mb-1">

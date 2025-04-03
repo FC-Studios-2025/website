@@ -2,11 +2,18 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import router from "./router.jsx";
+import ScrollBird from "./components/ScrollBird.jsx";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div className="bg-black">
+      {/* <div style={{
+        position: "relative",
+        // zIndex: -10
+      }}>
+        <ScrollBird />
+      </div> */}
       <RouterProvider router={router} />
     </div>
   </React.StrictMode>
