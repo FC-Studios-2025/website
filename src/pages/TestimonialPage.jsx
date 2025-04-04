@@ -134,7 +134,7 @@ const TestimonialsPage = () => {
       </main>
 
       {/* Footer */}
-      <div>
+      <div className="w-full">
         <Footer />
       </div>
     </div>

@@ -78,7 +78,7 @@ const ScrollBird = () => {
         style={{ background: 'transparent' }}
       >
         <ambientLight intensity={0.8} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
+        <directionalLight position={[10, 10, 5]} intensity={2} />
         <Suspense fallback={null}>
           <Bird scrollY={scrollY} />
         </Suspense>

@@ -21,7 +21,7 @@ const App = () => {
   return (
     <React.StrictMode>
       <div>
-        {/* <ScrollBird /> */}
+        <ScrollBird />
       </div>
       {isLoading ? (
         <LoadingScreen />
