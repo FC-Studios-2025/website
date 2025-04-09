@@ -140,14 +140,12 @@ const Landing = () => {
         {/* Description text */}
         <FadeInView delay={0.3} duration={0.7}>
           <div className="text-white font-light text-center md:text-2xl lg:text-3xl mt-12">
-            By collaborating with Film Craft Studios, you'll enjoy numerous
-            benefits that will elevate your brand's success 💯 to new heights.
-            At Film Craft Studios, our bespoke video editing 📽️ and content
-            creation 📝 services are designed to unlock 🔓 the full potential of
-            your ideas 💡, transforming them into compelling visual narratives.
-            With our expertise, your brand 🌿 will effortlessly stand out,
-            engaging audiences 😊 with professionally edited videos that leave a
-            lasting impact 💖.
+            We are Film Craft Studios. By collaborating with us, you'll enjoy
+            numerous benefits that will elevate your brand's success 💯 to new
+            heights. Our bespoke production services 📽️📝 bring your ideas 💡to
+            life, transforming them into captivating visual stories. With our
+            expertise, your brand 🌿 will stand out and engage audiences 😊,
+            leaving a lasting impact 💖.
           </div>
         </FadeInView>
 

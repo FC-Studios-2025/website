@@ -9,33 +9,41 @@ const TestimonialsPage = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      company: "Bright Innovations",
-      image: "/testimonial-1.jpg",
-      text: "Film Craft Studios transformed our brand message into a compelling visual story that resonated with our audience. Their creative approach and attention to detail exceeded our expectations.",
+      name: "Matthew Green",
+      company: "",
+      image: "/src/assets/userIcon.png", // Update with actual image paths if needed
+      text: "Professionalism at Its Best – Working with Film Craft Studios was an absolute pleasure. They demonstrated unparalleled creativity and execution in every aspect of our project. Their ability to transform our initial concepts into a visually striking video was truly remarkable. We are beyond satisfied with the results and would definitely recommend them.",
     },
     {
       id: 2,
-      name: "Michael Zhang",
-      company: "Elevate Brands",
-      image: "/testimonial-2.jpg",
-      text: "Working with Film Craft Studios was a game-changer for our marketing campaigns. Their team's expertise in video production delivered results that directly impacted our engagement metrics.",
+      name: "Benjamin Scott",
+      company: "",
+      image: "/src/assets/userIcon.png",
+      text: "Outstanding Customer Service and Quality – Film Craft Studios gave us great customer service and high-quality work. They were quick to respond, patient, and made sure we got exactly what we wanted. The final video was better than we expected. Well done, team!",
     },
     {
       id: 3,
-      name: "Priya Patel",
-      company: "Nexus Technologies",
-      image: "/testimonial-3.jpg",
-      text: "The professionalism and creative vision of Film Craft Studios helped us stand out in a crowded market. They truly understand how to capture a brand's essence through visual storytelling.",
+      name: "Mark Brown",
+      company: "",
+      image: "/src/assets/userIcon.png",
+      text: "Excellent Quality and Fast Turnaround – We were on a tight deadline, and Film Craft Studios delivered exceptional quality in record time. The editing was flawless, and the visual effects added a wow factor to our project. The team was professional, communicative, and committed to meeting our needs.",
     },
     {
       id: 4,
-      name: "David Williams",
-      company: "Spectrum Creatives",
-      image: "/testimonial-4.jpg",
-      text: "From concept to final edit, Film Craft Studios delivered exceptional quality. Their strategic approach to content creation helped us connect with our audience on a deeper level.",
+      name: "James Connor",
+      company: "",
+      image: "/src/assets/userIcon.png",
+      text: "Engaging and High-Quality Video Production – The team at Film Craft Studios is exceptional. They took the time to understand our needs and delivered a video that was engaging and of the highest quality. We're extremely satisfied with the results.",
+    },
+    {
+      id: 5,
+      name: "David Wilson",
+      company: "",
+      image: "/src/assets/userIcon.png",
+      text: "Creative Vision and Professional Execution – Film Craft Studios brought a creative vision to our project that we hadn't considered. Their innovative approach and professional execution resulted in a video that exceeded our expectations. The final outcome was a masterpiece.",
     },
   ];
+  
 
   return (
     <div className="flex flex-col items-center min-h-screen w-full text-white overflow-hidden">

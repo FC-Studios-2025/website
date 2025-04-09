@@ -20,9 +20,9 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      <div>
+      {/* <div>
         <ScrollBird />
-      </div>
+      </div> */}
       {isLoading ? (
         <LoadingScreen />
       ) : (

@@ -11,61 +11,30 @@ const TestimonialSlider = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      role: "Marketing Director, TechVision",
+      name: "Christopher Hall",
+      role: "",
       content:
-        "Film Craft Studios transformed our brand story into a visual masterpiece. Their attention to detail and creative vision exceeded our expectations.",
-      image: "/images/testimonial-1.jpg",
+        "Amazing Quality! I am thrilled with the results from the team. Customer service was amazing — 5 stars. They took the time to understand our needs and delivered a video that was engaging and of the highest quality. Outstanding work, Film Craft Studios!",
+      image: "/images/testimonial-1.jpg", // Update image paths if you have specific client photos
     },
     {
       id: 2,
-      name: "Michael Chen",
-      role: "Event Coordinator, Global Events",
+      name: "Michael Johnson",
+      role: "",
       content:
-        "Working with Film Craft Studios was seamless from start to finish. They captured the essence of our corporate event perfectly.",
-      image: "/images/testimonial-2.jpg",
+        "Exceptional Creativity and Customer Service. The creativity and expertise of Film Craft Studios are unmatched. Not only did they deliver a high-quality video, but they also did it quickly. Their efficiency and professionalism are commendable. Highly satisfied!",
+      image: "/src/assets/userIcon.png",
     },
     {
       id: 3,
-      name: "Emma Rodriguez",
-      role: "Creative Director, Artisan Brands",
+      name: "Emma Elliott",
+      role: "",
       content:
-        "I've worked with many video editors, but Film Craft Studios brings something special to each project. Their ability to blend visuals, sound, and narrative is remarkable.",
+        "Excellent Customer Service. A huge thank you to the FCS Team. They have been super helpful and professional since day one — which has been just under a year now. Always very supportive and efficient with all of our projects, guiding us through the entire process. Looking forward to working with you guys for a very long time.",
       image: "/images/testimonial-3.jpg",
     },
-    {
-      id: 4,
-      name: "James Wilson",
-      role: "Founder, Startup Innovations",
-      content:
-        "The animated explainer video Film Craft Studios created for our product launch simplified complex concepts and drove customer engagement.",
-      image: "/images/testimonial-4.jpg",
-    },
-    {
-      id: 4,
-      name: "James Wilson",
-      role: "Founder, Startup Innovations",
-      content:
-        "The animated explainer video Film Craft Studios created for our product launch simplified complex concepts and drove customer engagement.",
-      image: "/images/testimonial-4.jpg",
-    },
-    {
-      id: 4,
-      name: "James Wilson",
-      role: "Founder, Startup Innovations",
-      content:
-        "The animated explainer video Film Craft Studios created for our product launch simplified complex concepts and drove customer engagement.",
-      image: "/images/testimonial-4.jpg",
-    },
-    {
-      id: 4,
-      name: "James Wilson",
-      role: "Founder, Startup Innovations",
-      content:
-        "The animated explainer video Film Craft Studios created for our product launch simplified complex concepts and drove customer engagement.",
-      image: "/images/testimonial-4.jpg",
-    },
   ];
+  
 
   return (
     <div className=" py-8 md:py-20">
