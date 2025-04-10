@@ -8,6 +8,7 @@ import BasicButton from "../components/BasicButton";
 import Footer from "../components/Footer";
 import BlurredCircle from "../components/BlurredCircle";
 import ContactForm from "../components/ContactForm";
+import ResponsiveSection from "../components/ResponsiveSection";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -163,20 +164,16 @@ const Landing = () => {
           </FadeInView>
 
           {/* Grid Container */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
-            {/* First Row (Using First 2 Columns) */}
-            <SlideInView direction="left" className="md:col-span-2">
-              <div className="bg-gray-800 p-6 rounded-lg">Feature 1</div>
+          <div>
+            <SlideInView direction="left">
+              <ResponsiveSection heading1={"Limited Creative Input"} description1={"Some companies may follow a rigid approach, limiting creative input from the customer and resulting in generic content that fails to stand out."} imgUrl1={"https://res.cloudinary.com/dragkodnu/image/upload/v1744279789/Images/card1img.jpg"} altText1={"gifAnimation"} heading2={"Lack of Communication"} description2={"Customers may struggle to effectively communicate their vision, leading to misunderstandings and unsatisfactory results. "} imgUrl2={"https://assets4.lottiefiles.com/packages/lf20_zxmqc93z.json"} altText2={"gifAnimation"}/>
             </SlideInView>
-            <div className="hidden md:block"></div> {/* Empty grid space */}
-            {/* Second Row (Using Last 2 Columns) */}
-            <div className="hidden md:block"></div> {/* Empty grid space */}
+
             <SlideInView
               direction="right"
               delay={0.2}
-              className="md:col-span-2"
             >
-              <div className="bg-gray-800 p-6 rounded-lg">Feature 2</div>
+              <ResponsiveSection heading1={"High Costs"} description1={"Many video editing and content creation companies charge exorbitant prices, making their services inaccessible to customers with smaller budgets."} imgUrl1={"https://res.cloudinary.com/dragkodnu/image/upload/v1744279790/Images/card2img.jpg"} altText1={"gifAnimation"} heading2={"Lengthy Turnaround Times"} description2={"Delays in delivering the final product can hinder timely marketing campaigns or other important initiatives"} imgUrl2={"https://assets2.lottiefiles.com/packages/lf20_f8xnmcvu.json"} altText2={"gifAnimation"}/>
             </SlideInView>
           </div>
         </div>
@@ -282,7 +279,9 @@ const Landing = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <BasicButton onClick={handleEmailClick}>Get Details</BasicButton>
+                  <BasicButton onClick={handleEmailClick}>
+                    Get Details
+                  </BasicButton>
                 </motion.div>
               </div>
             </div>
