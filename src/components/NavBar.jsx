@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import FCSlogo from "../assets/FCSlogo.png"
+import FCSlogo from "../assets/FCSlogo.png";
 import { FaEnvelope, FaWhatsapp, FaTimes } from "react-icons/fa";
 import BasicButton from "./BasicButton";
 import { Link } from "react-router-dom";
@@ -14,27 +14,31 @@ const NavBar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      
+
       // Set transparency based on scroll position
       if (currentScrollPos > 20) {
         setTransparent(false);
       } else {
         setTransparent(true);
       }
-      
+
       // Set visibility based on scroll direction
       setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
       setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollPos]);
 
   // Handle clicks outside of mobile menu
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target) && mobileMenuOpen) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        mobileMenuOpen
+      ) {
         setMobileMenuOpen(false);
       }
     };
@@ -46,13 +50,13 @@ const NavBar = () => {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     }
-    
+
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = "auto";
     };
   }, [mobileMenuOpen]);
 
@@ -60,13 +64,17 @@ const NavBar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const handleEmailClick = () => {
+    window.location.href = "mailto:info@filmcraftstudios.com";
+  };
+
   return (
     <>
-      <nav 
+      <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
-          visible ? 'translate-y-0' : '-translate-y-full'
+          visible ? "translate-y-0" : "-translate-y-full"
         } ${
-          transparent ? 'bg-transparent' : 'bg-black bg-opacity-90'
+          transparent ? "bg-transparent" : "bg-black bg-opacity-90"
         } text-white p-4`}
       >
         <div className="flex items-center justify-between">
@@ -120,6 +128,7 @@ const NavBar = () => {
 
             <div>
               <BasicButton
+                onClick={handleEmailClick}
                 iconLeft={<FaEnvelope />}
                 variant="primary"
                 size="medium"
@@ -139,13 +148,15 @@ const NavBar = () => {
           </div>
           {/* Mobile Menu button */}
           <div className="md:hidden">
-            <button 
+            <button
               className="text-white focus:outline-none"
               onClick={toggleMobileMenu}
               aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               <svg
-                className={`w-6 h-6 transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`}
+                className={`w-6 h-6 transition-opacity duration-300 ${
+                  mobileMenuOpen ? "opacity-0" : "opacity-100"
+                }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -164,18 +175,18 @@ const NavBar = () => {
       </nav>
 
       {/* Mobile Menu Overlay */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
-          mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={toggleMobileMenu}
       />
 
       {/* Mobile Menu */}
-      <div 
+      <div
         ref={menuRef}
         className={`fixed top-0 right-0 w-4/5 max-w-sm h-full bg-black z-50 shadow-lg transform transition-transform duration-300 ease-in-out ${
-          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          mobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-6">
@@ -190,7 +201,7 @@ const NavBar = () => {
                 </div>
               </div>
             </Link>
-            <button 
+            <button
               className="text-white p-2 focus:outline-none rounded-full hover:bg-gray-800 transition-all duration-300"
               onClick={toggleMobileMenu}
               aria-label="Close menu"
@@ -198,7 +209,7 @@ const NavBar = () => {
               <FaTimes className="w-5 h-5 animate-spin-slow" />
             </button>
           </div>
-          
+
           <div className="flex flex-col space-y-6">
             <Link
               to="/"
@@ -228,9 +239,10 @@ const NavBar = () => {
             >
               Testimonials
             </Link>
-            
+
             <div className="pt-4 space-y-4">
               <BasicButton
+              onClick={handleEmailClick}
                 iconLeft={<FaEnvelope />}
                 variant="primary"
                 size="medium"

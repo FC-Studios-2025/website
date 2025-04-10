@@ -44,6 +44,9 @@ const TestimonialsPage = () => {
     },
   ];
   
+  const handleEmailClick = () => {
+    window.location.href = "mailto:info@filmcraftstudios.com";
+  };
 
   return (
     <div className="flex flex-col items-center min-h-screen w-full text-white overflow-hidden">
@@ -134,7 +137,7 @@ const TestimonialsPage = () => {
               Schedule a consultation with our team to discuss your project
               needs.
             </p>
-            <button className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+            <button onClick={handleEmailClick} className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Get Started
             </button>
           </div>

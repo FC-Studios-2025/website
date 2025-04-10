@@ -72,6 +72,10 @@ const SlideInView = ({
   );
 };
 
+const handleEmailClick = () => {
+  window.location.href = "mailto:info@filmcraftstudios.com";
+};
+
 const Landing = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
@@ -202,7 +206,7 @@ const Landing = () => {
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
               <h2>
-                Reel <span className="italic font-light">Video</span>
+                CGI <span className="italic font-light">Videos</span>
               </h2>
             </div>
           </FadeInView>
@@ -215,7 +219,7 @@ const Landing = () => {
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
               <h2>
-                Motion <span className="italic font-light">Video</span>
+                Motion <span className="italic font-light">Graphics</span>
               </h2>
             </div>
           </FadeInView>
@@ -278,7 +282,7 @@ const Landing = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <BasicButton>Get Details</BasicButton>
+                  <BasicButton onClick={handleEmailClick}>Get Details</BasicButton>
                 </motion.div>
               </div>
             </div>
