@@ -11,7 +11,7 @@ const ResponsiveSection = ({
   altText2,
 }) => {
   return (
-    <div className=" text-white p-4 md:p-8 lg:p-12">
+    <div className=" text-white py-4 md:py-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
         {/* Left Box */}
         <div className=" bg-gray-900 rounded-xl p-6 lg:p-8 lg:col-span-3 flex flex-col justify-between">

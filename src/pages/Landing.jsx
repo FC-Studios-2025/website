@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import BlurredCircle from "../components/BlurredCircle";
 import ContactForm from "../components/ContactForm";
 import ResponsiveSection from "../components/ResponsiveSection";
+import HeroText from "../components/HeroText";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -123,6 +124,11 @@ const Landing = () => {
 
       {/* Main content container with responsive max-width */}
       <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
+        <div className="w-full" >
+        
+        <HeroText/>
+
+        </div>
         {/* Hero video section */}
         <FadeInView duration={0.8}>
           <div className="relative aspect-video shadow-lg shadow-gray-500">
