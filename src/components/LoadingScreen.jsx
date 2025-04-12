@@ -48,7 +48,7 @@ const LoadingScreen = ({ onLoadingComplete }) => {
       </div>
 
       {/* Logo text in bottom right */}
-      <div className="absolute bottom-6 right-6 md:bottom-8 md:right-8 lg:bottom-10 lg:right-10">
+      <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 lg:bottom-10 lg:left-10">
         <div className="text-white font-medium flex items-center">
           <img src={FCSLogo} alt="Logo" className="h-10 w-10 md:h-14 md:w-14" />
           <div className="text-white text-lg md:text-2xl lg:text-3xl font-bold flex gap-1.5">
