@@ -124,10 +124,8 @@ const Landing = () => {
 
       {/* Main content container with responsive max-width */}
       <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-7xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
-        <div className="w-full" >
-        
-        <HeroText/>
-
+        <div className="w-full">
+          <HeroText />
         </div>
         {/* Hero video section */}
         <FadeInView duration={0.8}>
@@ -172,14 +170,45 @@ const Landing = () => {
           {/* Grid Container */}
           <div>
             <SlideInView direction="left">
-              <ResponsiveSection heading1={"Limited Creative Input"} description1={"Some companies may follow a rigid approach, limiting creative input from the customer and resulting in generic content that fails to stand out."} imgUrl1={"https://res.cloudinary.com/dragkodnu/image/upload/v1744279789/Images/card1img.jpg"} altText1={"gifAnimation"} heading2={"Lack of Communication"} description2={"Customers may struggle to effectively communicate their vision, leading to misunderstandings and unsatisfactory results. "} imgUrl2={"https://assets4.lottiefiles.com/packages/lf20_zxmqc93z.json"} altText2={"gifAnimation"}/>
+              <ResponsiveSection
+                heading1={"Limited Creative Input"}
+                description1={
+                  "Some companies may follow a rigid approach, limiting creative input from the customer and resulting in generic content that fails to stand out."
+                }
+                imgUrl1={
+                  "https://res.cloudinary.com/dragkodnu/image/upload/v1744279789/Images/card1img.jpg"
+                }
+                altText1={"gifAnimation"}
+                heading2={"Lack of Communication"}
+                description2={
+                  "Customers may struggle to effectively communicate their vision, leading to misunderstandings and unsatisfactory results. "
+                }
+                imgUrl2={
+                  "https://assets4.lottiefiles.com/packages/lf20_zxmqc93z.json"
+                }
+                altText2={"gifAnimation"}
+              />
             </SlideInView>
 
-            <SlideInView
-              direction="right"
-              delay={0.2}
-            >
-              <ResponsiveSection heading1={"High Costs"} description1={"Many video editing and content creation companies charge exorbitant prices, making their services inaccessible to customers with smaller budgets."} imgUrl1={"https://res.cloudinary.com/dragkodnu/image/upload/v1744279790/Images/card2img.jpg"} altText1={"gifAnimation"} heading2={"Lengthy Turnaround Times"} description2={"Delays in delivering the final product can hinder timely marketing campaigns or other important initiatives"} imgUrl2={"https://assets2.lottiefiles.com/packages/lf20_f8xnmcvu.json"} altText2={"gifAnimation"}/>
+            <SlideInView direction="right" delay={0.2}>
+              <ResponsiveSection
+                heading1={"High Costs"}
+                description1={
+                  "Many video editing and content creation companies charge exorbitant prices, making their services inaccessible to customers with smaller budgets."
+                }
+                imgUrl1={
+                  "https://res.cloudinary.com/dragkodnu/image/upload/v1744279790/Images/card2img.jpg"
+                }
+                altText1={"gifAnimation"}
+                heading2={"Lengthy Turnaround Times"}
+                description2={
+                  "Delays in delivering the final product can hinder timely marketing campaigns or other important initiatives"
+                }
+                imgUrl2={
+                  "https://assets2.lottiefiles.com/packages/lf20_f8xnmcvu.json"
+                }
+                altText2={"gifAnimation"}
+              />
             </SlideInView>
           </div>
         </div>
@@ -194,7 +223,7 @@ const Landing = () => {
             </div>
           </FadeInView>
           <FadeInView delay={0.2}>
-            <div style={{ height: "60vh", position: "relative", width: "full" }}>
+            <div className="h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh] relative w-full">
               <CircularGallery
                 bend={1}
                 textColor="#ffffff"

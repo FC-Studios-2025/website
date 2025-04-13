@@ -238,21 +238,21 @@ class Media {
     const H = this.viewport.width / 2
 
     // Calculate how centered this card is (0 = perfectly centered, 1 = at edge or beyond)
-  const distanceFromCenter = Math.abs(x) / (this.viewport.width / 2)
-  const centerFactor = Math.max(0, 1 - distanceFromCenter)
-  
-  // Scale up cards when they're in the center (adjust 0.15 to control how much bigger)
-  const scaleBoost = 1 + (0.15 * centerFactor)
-  
-  // Apply the scaling - store original scales first time
-  if (!this.originalScaleX) {
-    this.originalScaleX = this.plane.scale.x
-    this.originalScaleY = this.plane.scale.y
-  }
-  
-  // Apply the scale boost
-  this.plane.scale.x = this.originalScaleX * scaleBoost
-  this.plane.scale.y = this.originalScaleY * scaleBoost
+    const distanceFromCenter = Math.abs(x) / (this.viewport.width / 2)
+    const centerFactor = Math.max(0, 1 - distanceFromCenter)
+    
+    // Scale up cards when they're in the center (adjust 0.15 to control how much bigger)
+    const scaleBoost = 1 + (0.15 * centerFactor)
+    
+    // Apply the scaling - store original scales first time
+    if (!this.originalScaleX) {
+      this.originalScaleX = this.plane.scale.x
+      this.originalScaleY = this.plane.scale.y
+    }
+    
+    // Apply the scale boost
+    this.plane.scale.x = this.originalScaleX * scaleBoost
+    this.plane.scale.y = this.originalScaleY * scaleBoost
 
     if (this.bend === 0) {
       this.plane.position.y = 0
@@ -328,12 +328,98 @@ class Media {
   }
 }
 
+// Create pagination dots component
+class PaginationDots {
+  constructor({ container, itemCount, dotColor = '#ffffff', activeDotColor = '#007bff', size = 10, gap = 10 }) {
+    this.container = container
+    this.itemCount = itemCount
+    this.dotColor = dotColor
+    this.activeDotColor = activeDotColor
+    this.size = size
+    this.gap = gap
+    this.activeIndex = 0
+    this.dots = []
+    this.createDots()
+  }
+
+  createDots() {
+    // Create pagination container
+    this.dotsContainer = document.createElement('div')
+    this.dotsContainer.className = 'pagination-dots'
+    this.dotsContainer.style.position = 'absolute'
+    this.dotsContainer.style.bottom = '20px'
+    this.dotsContainer.style.left = '50%'
+    this.dotsContainer.style.transform = 'translateX(-50%)'
+    this.dotsContainer.style.display = 'flex'
+    this.dotsContainer.style.justifyContent = 'center'
+    this.dotsContainer.style.alignItems = 'center'
+    this.dotsContainer.style.zIndex = '100'
+    
+    // Create individual dots
+    for (let i = 0; i < this.itemCount; i++) {
+      const dot = document.createElement('div')
+      dot.className = 'pagination-dot'
+      dot.style.width = `${this.size}px`
+      dot.style.height = `${this.size}px`
+      dot.style.borderRadius = '50%'
+      dot.style.backgroundColor = i === 0 ? this.activeDotColor : this.dotColor
+      dot.style.margin = `0 ${this.gap / 2}px`
+      dot.style.transition = 'all 0.3s ease'
+      dot.style.opacity = i === 0 ? '1' : '0.5'
+      dot.style.transform = i === 0 ? 'scale(1.2)' : 'scale(1)'
+      
+      this.dots.push(dot)
+      this.dotsContainer.appendChild(dot)
+    }
+    
+    this.container.appendChild(this.dotsContainer)
+  }
+  
+  setActiveDot(index) {
+    // Normalize index to actual item count (for the duplicated items)
+    const actualIndex = index % (this.itemCount / 2)
+    
+    // Update all dots
+    this.dots.forEach((dot, i) => {
+      if (i === actualIndex) {
+        dot.style.backgroundColor = this.activeDotColor
+        dot.style.opacity = '1'
+        dot.style.transform = 'scale(1.2)'
+      } else {
+        dot.style.backgroundColor = this.dotColor
+        dot.style.opacity = '0.5'
+        dot.style.transform = 'scale(1)'
+      }
+    })
+    
+    this.activeIndex = actualIndex
+  }
+  
+  destroy() {
+    if (this.dotsContainer && this.dotsContainer.parentNode) {
+      this.dotsContainer.parentNode.removeChild(this.dotsContainer)
+    }
+  }
+}
+
 class App {
-  constructor(container, { items, bend, textColor = "#ffffff", borderRadius = 0, font = "bold 30px DM Sans" } = {}) {
+  constructor(container, { items, bend, textColor = "#ffffff", borderRadius = 0, font = "bold 30px DM Sans", autoScroll = true, autoScrollInterval = 2000, dotColor = '#ffffff', activeDotColor = '#007bff', dotSize = 10, dotGap = 10 } = {}) {
     document.documentElement.classList.remove('no-js')
     this.container = container
     this.scroll = { ease: 0.05, current: 0, target: 0, last: 0 }
     this.onCheckDebounce = debounce(this.onCheck, 200)
+
+    // Auto scroll properties
+    this.autoScroll = autoScroll
+    this.autoScrollInterval = autoScrollInterval
+    this.autoScrollPaused = false
+    this.autoScrollTimer = null
+    
+    // Pagination dots properties
+    this.dotColor = dotColor
+    this.activeDotColor = activeDotColor
+    this.dotSize = dotSize
+    this.dotGap = dotGap
     
     // Create renderer, camera, and scene first
     this.createRenderer()
@@ -347,18 +433,54 @@ class App {
     this.createGeometry()
     this.createMedias(items, bend, textColor, borderRadius, font)
     
+    // Create pagination dots after medias are created
+    this.createPaginationDots(items)
+    
     // Start the update loop and add event listeners
     this.update()
     this.addEventListeners()
+
+    // Start auto-scrolling if enabled
+    if (this.autoScroll) {
+      this.startAutoScroll()
+    }
   }
+  
+  createPaginationDots(items) {
+    const defaultItems = [
+      { image: `https://picsum.photos/seed/1/800/600`, text: 'Bridge' },
+      { image: `https://picsum.photos/seed/2/800/600`, text: 'Desk Setup' },
+      { image: `https://picsum.photos/seed/3/800/600`, text: 'Waterfall' },
+      { image: `https://picsum.photos/seed/4/800/600`, text: 'Strawberries' },
+      { image: `https://picsum.photos/seed/5/800/600`, text: 'Deep Diving' },
+      { image: `https://picsum.photos/seed/16/800/600`, text: 'Train Track' },
+      { image: `https://picsum.photos/seed/17/800/600`, text: 'Santorini' },
+      { image: `https://picsum.photos/seed/8/800/600`, text: 'Blurry Lights' },
+      { image: `https://picsum.photos/seed/9/800/600`, text: 'New York' },
+      { image: `https://picsum.photos/seed/10/800/600`, text: 'Good Boy' },
+      { image: `https://picsum.photos/seed/21/800/600`, text: 'Coastline' },
+      { image: `https://picsum.photos/seed/12/800/600`, text: "Palm Trees" }
+    ]
+    const galleryItems = items && items.length ? items : defaultItems
+    
+    this.paginationDots = new PaginationDots({
+      container: this.container,
+      itemCount: galleryItems.length,
+      dotColor: this.dotColor,
+      activeDotColor: this.activeDotColor,
+      size: this.dotSize,
+      gap: this.dotGap
+    })
+  }
+  
   createRenderer() {
     this.renderer = new Renderer({ alpha: true })
     this.gl = this.renderer.gl
     this.gl.clearColor(0, 0, 0, 0)
     const canvas = this.gl.canvas
-  canvas.style.height = "120vh" // Increase canvas height to 120% of viewport height
-  
-  this.container.appendChild(this.gl.canvas)
+    canvas.style.height = "120vh" // Increase canvas height to 120% of viewport height
+    
+    this.container.appendChild(this.gl.canvas)
   }
   createCamera() {
     this.camera = new Camera(this.gl)
@@ -391,6 +513,7 @@ class App {
     ]
     const galleryItems = items && items.length ? items : defaultItems
     this.mediasImages = galleryItems.concat(galleryItems)
+    this.originalItemCount = galleryItems.length
     this.medias = this.mediasImages.map((data, index) => {
       return new Media({
         geometry: this.planeGeometry,
@@ -410,10 +533,37 @@ class App {
       })
     })
   }
+
+  startAutoScroll() {
+    if (this.autoScrollTimer) {
+      clearInterval(this.autoScrollTimer)
+    }
+    
+    this.autoScrollTimer = setInterval(() => {
+      if (!this.autoScrollPaused && this.medias && this.medias.length > 0) {
+        // Calculate the width of one item to move
+        const width = this.medias[0].width
+        // Move one card to the right
+        this.scroll.target += width
+        this.onCheck()
+      }
+    }, this.autoScrollInterval)
+  }
+  
+  pauseAutoScroll() {
+    this.autoScrollPaused = true
+  }
+  
+  resumeAutoScroll() {
+    this.autoScrollPaused = false
+  }
+  
   onTouchDown(e) {
     this.isDown = true
     this.scroll.position = this.scroll.current
     this.start = e.touches ? e.touches[0].clientX : e.clientX
+
+    this.pauseAutoScroll()
   }
   onTouchMove(e) {
     if (!this.isDown) return
@@ -424,10 +574,20 @@ class App {
   onTouchUp() {
     this.isDown = false
     this.onCheck()
+    setTimeout(() => {
+      this.resumeAutoScroll()
+    }, 1000)
   }
   onWheel() {
     this.scroll.target += 2
     this.onCheckDebounce()
+    this.pauseAutoScroll()
+    
+    // Resume after some idle time
+    clearTimeout(this.wheelTimer)
+    this.wheelTimer = setTimeout(() => {
+      this.resumeAutoScroll()
+    }, 2000)
   }
   onCheck() {
     if (!this.medias || !this.medias[0]) return
@@ -476,9 +636,18 @@ class App {
       this.scroll.ease
     )
     const direction = this.scroll.current > this.scroll.last ? 'right' : 'left'
+    
     if (this.medias) {
       this.medias.forEach((media) => media.update(this.scroll, direction))
+      
+      // Update pagination dots based on current slide
+      if (this.paginationDots && this.medias[0]) {
+        const width = this.medias[0].width
+        const currentIndex = Math.round(Math.abs(this.scroll.current) / width) % this.originalItemCount
+        this.paginationDots.setActiveDot(currentIndex)
+      }
     }
+    
     this.renderer.render({ scene: this.scene, camera: this.camera })
     this.scroll.last = this.scroll.current
     this.raf = window.requestAnimationFrame(this.update.bind(this))
@@ -500,6 +669,20 @@ class App {
     window.addEventListener('touchend', this.boundOnTouchUp)
   }
   destroy() {
+    // Clean up pagination dots
+    if (this.paginationDots) {
+      this.paginationDots.destroy()
+    }
+    
+    // Clear auto-scroll timer when component unmounts
+    if (this.autoScrollTimer) {
+      clearInterval(this.autoScrollTimer)
+      this.autoScrollTimer = null
+    }
+    
+    if (this.wheelTimer) {
+      clearTimeout(this.wheelTimer)
+    }
     window.cancelAnimationFrame(this.raf)
     window.removeEventListener('resize', this.boundOnResize)
     window.removeEventListener('mousewheel', this.boundOnWheel)
@@ -521,16 +704,35 @@ export default function CircularGallery({
   bend = 3,
   textColor = "#ffffff",
   borderRadius = 0.05,
-  font = "bold 30px DM Sans"
+  font = "bold 30px DM Sans",
+  autoScroll = true,
+  autoScrollInterval = 2000,
+  dotColor = '#ffffff',
+  activeDotColor = '#007bff',
+  dotSize = 6,
+  dotGap = 10
 }) {
   const containerRef = useRef(null)
   useEffect(() => {
-    const app = new App(containerRef.current, { items, bend, textColor, borderRadius, font })
+    const app = new App(containerRef.current, { 
+      items, 
+      bend, 
+      textColor, 
+      borderRadius, 
+      font, 
+      autoScroll, 
+      autoScrollInterval,
+      dotColor,
+      activeDotColor,
+      dotSize,
+      dotGap
+    })
     return () => {
       app.destroy()
     }
-  }, [items, bend, textColor, borderRadius, font])
+  }, [items, bend, textColor, borderRadius, font, autoScroll, autoScrollInterval, dotColor, activeDotColor, dotSize, dotGap])
+  
   return (
-    <div className='w-full h-full overflow-hidden cursor-grab active:cursor-grabbing' ref={containerRef} />
+    <div className='w-full h-full overflow-hidden cursor-grab active:cursor-grabbing relative' ref={containerRef} />
   )
 }
