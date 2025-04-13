@@ -237,6 +237,23 @@ class Media {
     const x = this.plane.position.x
     const H = this.viewport.width / 2
 
+    // Calculate how centered this card is (0 = perfectly centered, 1 = at edge or beyond)
+  const distanceFromCenter = Math.abs(x) / (this.viewport.width / 2)
+  const centerFactor = Math.max(0, 1 - distanceFromCenter)
+  
+  // Scale up cards when they're in the center (adjust 0.15 to control how much bigger)
+  const scaleBoost = 1 + (0.15 * centerFactor)
+  
+  // Apply the scaling - store original scales first time
+  if (!this.originalScaleX) {
+    this.originalScaleX = this.plane.scale.x
+    this.originalScaleY = this.plane.scale.y
+  }
+  
+  // Apply the scale boost
+  this.plane.scale.x = this.originalScaleX * scaleBoost
+  this.plane.scale.y = this.originalScaleY * scaleBoost
+
     if (this.bend === 0) {
       this.plane.position.y = 0
       this.plane.rotation.z = 0
@@ -287,14 +304,14 @@ class Media {
     
     // Adjust scale based on screen size
     let heightScale = 1000;
-    let widthScale = 800;
+    let widthScale = 750;
     
     if (isSmall) {
-      heightScale = 650;  // smaller height for mobile
-      widthScale = 450;   // smaller width for mobile
+      heightScale = 750;  // smaller height for mobile
+      widthScale = 500;   // smaller width for mobile
     } else if (isMedium) {
-      heightScale = 950;  // medium height for tablets
-      widthScale = 750;   // medium width for tablets
+      heightScale = 900;  // medium height for tablets
+      widthScale = 700;   // medium width for tablets
     }
     
     this.scale = this.screen.height / 1500
@@ -303,7 +320,7 @@ class Media {
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y]
     
     // Adjust padding for different screen sizes
-    this.padding = isSmall ? 1 : (isMedium ? 1.5 : 2);
+    this.padding = isSmall ? 2 : (isMedium ? 1.5 : 2);
     
     this.width = this.plane.scale.x + this.padding
     this.widthTotal = this.width * this.length
@@ -338,7 +355,10 @@ class App {
     this.renderer = new Renderer({ alpha: true })
     this.gl = this.renderer.gl
     this.gl.clearColor(0, 0, 0, 0)
-    this.container.appendChild(this.gl.canvas)
+    const canvas = this.gl.canvas
+  canvas.style.height = "120vh" // Increase canvas height to 120% of viewport height
+  
+  this.container.appendChild(this.gl.canvas)
   }
   createCamera() {
     this.camera = new Camera(this.gl)

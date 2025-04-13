@@ -123,7 +123,7 @@ const Landing = () => {
       </div>
 
       {/* Main content container with responsive max-width */}
-      <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-5xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
+      <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-7xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
         <div className="w-full" >
         
         <HeroText/>
@@ -187,18 +187,18 @@ const Landing = () => {
         {/* Enchant Your Audience section */}
         <div className="text-white py-16">
           <FadeInView>
-            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+            <div className="font-bold md:pb-6 text-xl md:text-2xl lg:text-4xl">
               <h2>
                 Enchant Your <span className="italic font-light">Audience</span>
               </h2>
             </div>
           </FadeInView>
           <FadeInView delay={0.2}>
-            <div style={{ height: "45vh", position: "relative" }}>
+            <div style={{ height: "60vh", position: "relative", width: "full" }}>
               <CircularGallery
                 bend={1}
                 textColor="#ffffff"
-                borderRadius={0.05}
+                borderRadius={0.02}
               />
             </div>
           </FadeInView>

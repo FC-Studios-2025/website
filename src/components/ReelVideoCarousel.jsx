@@ -11,67 +11,67 @@ const videoData = [
     id: "video1", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video2", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video3", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video4", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video5", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video6", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video7", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video8", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video9", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video10", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
   { 
     id: "video11", 
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
     aspectRatio: "9/16", // vertical/reel format
-    title: "Vertical Reel" 
+    // title: "Vertical Reel" 
   },
 ];
 
