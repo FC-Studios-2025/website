@@ -10,6 +10,7 @@ import BlurredCircle from "../components/BlurredCircle";
 import ContactForm from "../components/ContactForm";
 import ResponsiveSection from "../components/ResponsiveSection";
 import HeroText from "../components/HeroText";
+import CreativeApproachComponent from "../components/CreativeApproachComponent";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -77,6 +78,34 @@ const SlideInView = ({
 const handleEmailClick = () => {
   window.location.href = "mailto:info@filmcraftstudios.com";
 };
+
+const approachesList1 = [
+  "Storytelling techniques",
+  "Engaging visual narratives",
+  "Unique angle selection",
+  "Emotional content resonance",
+  "Attention-grabbing openings",
+  "Consistent style guidance",
+  "Incorporate trends subtly",
+  "Effective pacing tips",
+  "Audience interaction ideas",
+  "Surprising plot twists",
+  "Humor infusion methods",
+  "Symbolism and metaphors",
+  "Visual symbolism tips",
+  "Authenticity emphasis",
+];
+const approachesList2 = [
+  "Compelling intros",
+  "Audience engagement hooks",
+  "Call-to-action integration",
+  "Thumbnail optimization",
+  "SEO-friendly titles",
+  "Consistent posting schedule",
+  "Collaborations for reach",
+  "Social media sharing",
+  "Live interaction sessions",
+];
 
 const Landing = () => {
   return (
@@ -233,8 +262,25 @@ const Landing = () => {
           </FadeInView>
         </div>
 
+        {/* Creative Approach */}
+        <div className="text-white pb-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Approach for{" "}
+                <span className="italic font-light">Exceptional Outcome</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.3}>
+            <div className=" w-full">
+              <CreativeApproachComponent approaches={approachesList1} />
+            </div>
+          </FadeInView>
+        </div>
+
         {/* Video carousels - full width sections */}
-        <div className="text-white py-16">
+        <div className="text-white pb-16">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
               <h2>
@@ -244,6 +290,23 @@ const Landing = () => {
           </FadeInView>
           <FadeInView delay={0.2}>
             <ReelVideoCarousel />
+          </FadeInView>
+        </div>
+
+        {/* Lead Conversion Rate */}
+        <div className="text-white pb-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Improve Your{" "}
+                <span className="italic font-light">Lead Conversion Rate</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.3}>
+            <div className=" w-full">
+              <CreativeApproachComponent approaches={approachesList2} />
+            </div>
           </FadeInView>
         </div>
 

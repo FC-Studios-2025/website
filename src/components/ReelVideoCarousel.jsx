@@ -263,7 +263,8 @@ const ReelVideoCarousel = () => {
       // On desktop, maintain aspect ratio
       return {
         aspectRatio: "9/16",
-        width: "86%",
+        height: "60vh",
+        width: "auto",
         margin: "0 auto"
       };
     }
@@ -277,7 +278,7 @@ const ReelVideoCarousel = () => {
   };
 
   return (
-    <div className="py-2 px-1 sm:py-3 md:py-4 lg:py-6 xl:py-8 sm:px-2 md:px-3 lg:px-4">
+    <div className="py-2 px-1 sm:py-3 md:py-4 lg:py-6 xl:py-8 sm:px-2 md:px-3 lg:px-14">
       <div className="relative w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         {/* Navigation Arrows - Responsive sizes and positions */}
         <button
@@ -298,7 +299,7 @@ const ReelVideoCarousel = () => {
 
         <Swiper
           ref={swiperRef}
-          slidesPerView={viewportSize.isMobile ? 1.3 : viewportSize.isTablet ? 1.5 : 1.8}
+          slidesPerView={viewportSize.isMobile ? 1.3 : viewportSize.isTablet ? 1.5 : 3}
           spaceBetween={viewportSize.isMobile ? 10 : viewportSize.isTablet ? 12 : 14}
           centeredSlides={true}
           loop={true}

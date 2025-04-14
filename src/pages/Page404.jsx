@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
+import FCSlogo from "../assets/FCSlogo.png";
 
 const Page404 = () => {
   return (
@@ -33,10 +35,20 @@ const Page404 = () => {
         {/* Studio name at the bottom */}
         <div className="mt-12 md:mt-16 lg:mt-20">
           <div className="text-lg md:text-xl lg:text-2xl font-bold flex items-center justify-center gap-1.5">
+            <span>
+                              <img
+                                className="h-10 w-10"
+                                src={FCSlogo}
+                                alt="FilmCraftStudiosLogo"
+                              />
+                            </span>
             Film Craft <span className="font-light italic">Studios</span>
           </div>
         </div>
       </div>
+        <div className="w-full">
+          <Footer/>
+        </div>
     </div>
   );
 };

@@ -303,15 +303,15 @@ class Media {
     const isMedium = this.screen.width >= 640 && this.screen.width < 768;  // md breakpoint
     
     // Adjust scale based on screen size
-    let heightScale = 1000;
-    let widthScale = 750;
+    let heightScale = 850;
+    let widthScale = 600;
     
     if (isSmall) {
       heightScale = 750;  // smaller height for mobile
       widthScale = 500;   // smaller width for mobile
     } else if (isMedium) {
-      heightScale = 900;  // medium height for tablets
-      widthScale = 700;   // medium width for tablets
+      heightScale = 800;  // medium height for tablets
+      widthScale = 600;   // medium width for tablets
     }
     
     this.scale = this.screen.height / 1500
