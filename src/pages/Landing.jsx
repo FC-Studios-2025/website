@@ -342,8 +342,9 @@ const Landing = () => {
                 <div className="font-bold md:text-2xl text-white">
                   Flexible Options
                 </div>
-                Tailor your package to suit your specific project requirements
-                and goals.
+                Tailor your package to meet the specific needs, goals, and scope
+                of your project. Whether you're after a one-off production or
+                long-term collaboration, we adapt to suit you.
               </motion.div>
 
               <motion.div
@@ -354,8 +355,8 @@ const Landing = () => {
                 <div className="font-bold md:text-2xl text-white">
                   Transparent Pricing
                 </div>
-                No hidden fees—what you see is what you get with our
-                straightforward pricing.
+                No hidden charges or unexpected extras—just clear, upfront
+                pricing you can trust. What you see is exactly what you get.
               </motion.div>
 
               <motion.div
@@ -363,9 +364,11 @@ const Landing = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="font-bold md:text-2xl text-white">
-                  Expert Support
+                  Expert Guidance & Support
                 </div>
-                Our team is here to assist you every step of the way.
+                From your initial enquiry to the final delivery, our team is
+                with you every step of the way, offering dedicated support and
+                industry expertise.
               </motion.div>
 
               <div className="py-8">

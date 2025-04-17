@@ -20,9 +20,15 @@ export default function HeroText() {
           lasting impressions.
         </p>
         <div className="flex justify-center mt-8 md:mt-10">
-          <button className="bg-transparent cursor-pointer border-2 border-white text-white font-medium py-2 px-6 md:px-8 rounded-lg hover:bg-white hover:text-black transition duration-300 mr-4">
+          <button
+            onClick={() =>
+              (window.location.href = "mailto:info@filmcraftstudios.com")
+            }
+            className="bg-transparent cursor-pointer border-2 border-white text-white font-medium py-2 px-6 md:px-8 rounded-lg hover:bg-white hover:text-black transition duration-300 mr-4"
+          >
             Get Started
           </button>
+
           <button className="bg-gradient-to-r from-blue-500 to-teal-500 text-white font-medium py-2 px-6 md:px-8 rounded-lg hover:opacity-90 transition duration-300">
             <Link to={"/works"}>Watch Demo</Link>
           </button>
