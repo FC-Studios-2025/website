@@ -37,10 +37,10 @@ const TestimonialsPage = () => {
     },
     {
       id: 5,
-      name: "David Wilson",
+      name: "Sophie Langford",
       company: "",
       image: "/src/assets/userIcon.png",
-      text: "Creative Vision and Professional Execution – Film Craft Studios brought a creative vision to our project that we hadn't considered. Their innovative approach and professional execution resulted in a video that exceeded our expectations. The final outcome was a masterpiece.",
+      text: "Didn’t Know What to Expect – Pleasantly Surprised Honestly, I wasn’t sure what working with a production company would be like, since it was our first time doing a video. I thought it might be all technical jargon and back-and-forth emails — but the team at Film Craft Studios made it straightforward. They explained things clearly, didn’t over complicate anything, and listened.",
     },
   ];
   

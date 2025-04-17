@@ -242,6 +242,50 @@ const Landing = () => {
           </div>
         </div>
 
+        <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
+          <FadeInView delay={0.7}>
+            <div className="relative aspect-video shadow-lg shadow-gray-500">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-auto object-cover rounded-sm"
+                onEnded={(e) => e.target.play()}
+              >
+                <source
+                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/ifiqn9mpyc3ai63sed6j"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </FadeInView>
+        </section>
+
+
+        
+        
+
+        <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
+          <FadeInView delay={0.7}>
+            <div className="relative aspect-video shadow-lg shadow-gray-500">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-auto object-cover rounded-sm"
+                onEnded={(e) => e.target.play()}
+              >
+                <source
+                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/fp2rmpv19sccnxkaku7m"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </FadeInView>
+        </section>
+
         {/* Enchant Your Audience section */}
         <div className="text-white py-16">
           <FadeInView>

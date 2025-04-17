@@ -33,6 +33,14 @@ const TestimonialSlider = () => {
         "Excellent Customer Service. A huge thank you to the FCS Team. They have been super helpful and professional since day one — which has been just under a year now. Always very supportive and efficient with all of our projects, guiding us through the entire process. Looking forward to working with you guys for a very long time.",
       image: "/images/testimonial-3.jpg",
     },
+    {
+      id: 4,
+      name: "David Wilson",
+      role: "",
+      content:
+        "More Than Just a Video It wasn’t just about visuals — they helped us shape the whole message. We came in thinking we needed a simple promo video, but they pushed the concept further and gave it meaning. The final version had real polish, but also real substance. That’s rare, in my experience.",
+      image: "/images/testimonial-3.jpg",
+    },
   ];
   
 
@@ -43,22 +51,22 @@ const TestimonialSlider = () => {
           <h2 className="text-white font-bold text-xl md:text-2xl lg:text-4xl py-2">
             What Our Clients Say
           </h2>
-          <div className="w-16 h-1 mx-auto mt-2 mb-8"></div>
+          <div className="w-14 h-1 mx-auto mt-2 mb-8"></div>
         </div>
 
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={30}
-          slidesPerView={1}
+          slidesPerView={2}
           // navigation
-          // pagination={{ clickable: true }}
-          autoplay={{ delay: 5000 }}
+          pagination={{ clickable: true}}
+          autoplay={{ delay: 3000 }}
           breakpoints={{
-            640: {
-              slidesPerView: 1,
+            340: {
+              slidesPerView: 1.1,
             },
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
             },
             1024: {
               slidesPerView: 3,
@@ -68,7 +76,7 @@ const TestimonialSlider = () => {
         >
           {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="pb-12">
-              <div className="border border-gray-700 rounded-lg shadow-lg p-8 h-full flex flex-col">
+              <div className="border border-gray-700 rounded-lg shadow-lg p-6 h-full flex flex-col">
                 <div className="flex-grow">
                   <div className="text-white mb-4">
                     <svg

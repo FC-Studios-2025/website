@@ -177,124 +177,167 @@ const AboutUs = () => {
           </FadeInView>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <FadeInView delay={0.1}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Professional Video Editing</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.1}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Professional Video Editing
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.2}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M13.6,2.3L12.8,1l-2,3.3L8.8,1L8,2.3l2.9,4.7L8,11.7L8.8,13l2-3.3l2,3.3l0.8-1.3L10.7,7L13.6,2.3z M18,7h-2.6L13,4 h1.5L18,7z M2,7h2.6L7,4H5.5L2,7z M18,13h-2.6L13,16h1.5L18,13z M2,13h2.6L7,16H5.5L2,13z" />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Graphic Designing</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.2}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M13.6,2.3L12.8,1l-2,3.3L8.8,1L8,2.3l2.9,4.7L8,11.7L8.8,13l2-3.3l2,3.3l0.8-1.3L10.7,7L13.6,2.3z M18,7h-2.6L13,4 h1.5L18,7z M2,7h2.6L7,4H5.5L2,7z M18,13h-2.6L13,16h1.5L18,13z M2,13h2.6L7,16H5.5L2,13z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Graphic Designing
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.3}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Content for Brands</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.3}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M7 2a1 1 0 00-.707 1.707L7 4.414v3.758a1 1 0 01-.293.707l-4 4C.817 14.769 2.156 18 4.828 18h10.343c2.673 0 4.012-3.231 2.122-5.121l-4-4A1 1 0 0113 8.172V4.414l.707-.707A1 1 0 0013 2H7zm2 6.172V4h2v4.172a3 3 0 00.879 2.12l1.027 1.028a4 4 0 00-2.171.102l-.47.156a4 4 0 01-2.53 0l-.563-.187a1.993 1.993 0 00-.114-.035l1.063-1.063A3 3 0 009 8.172z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Content for Brands
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.4}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-        <path
-          fillRule="evenodd"
-          d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Animated Posters</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.4}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path
+                      fillRule="evenodd"
+                      d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">Animated Posters</h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.5}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Promotional Videos</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.5}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Promotional Videos
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.6}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Colour Correction</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.6}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 2a2 2 0 00-2 2v11a3 3 0 106 0V4a2 2 0 00-2-2H4zm1 14a1 1 0 100-2 1 1 0 000 2zm5-1.757l4.9-4.9a2 2 0 000-2.828L13.485 5.1a2 2 0 00-2.828 0L10 5.757v8.486zM16 18H9.071l6-6H16a2 2 0 012 2v2a2 2 0 01-2 2z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Colour Correction
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.7}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-        <path
-          fillRule="evenodd"
-          d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">Audio Enhancement</h3>
-  </div>
-</FadeInView>
+            <FadeInView delay={0.7}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">
+                  Audio Enhancement
+                </h3>
+              </div>
+            </FadeInView>
 
-<FadeInView delay={0.8}>
-  <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
-    <div className="text-teal-400 mb-3">
-      <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M3 4a1 1 0 011-1h2.382a1 1 0 01.894.553L9.618 6H21a1 1 0 011 1v2H3V4zm18 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9h18zm-7.382-3L11.118 4H9.382l1.5 3H13.5zm2.764 0L14.618 4h-1.736l1.5 3h1.882zm2.764 0L17.382 4h-1.736l1.5 3h1.882z" />
-      </svg>
-    </div>
-    <h3 className="text-lg font-semibold mb-1">CGI</h3>
-  </div>
-</FadeInView>
-
+            <FadeInView delay={0.8}>
+              <div className="bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-teal-400 transition-colors">
+                <div className="text-teal-400 mb-3">
+                  <svg
+                    className="w-8 h-8"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M3 4a1 1 0 011-1h2.382a1 1 0 01.894.553L9.618 6H21a1 1 0 011 1v2H3V4zm18 5v11a1 1 0 01-1 1H4a1 1 0 01-1-1V9h18zm-7.382-3L11.118 4H9.382l1.5 3H13.5zm2.764 0L14.618 4h-1.736l1.5 3h1.882zm2.764 0L17.382 4h-1.736l1.5 3h1.882z" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-semibold mb-1">CGI Videos</h3>
+              </div>
+            </FadeInView>
           </div>
         </div>
       </section>
 
-      <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
         <FadeInView delay={0.7}>
           <div className="relative aspect-video shadow-lg shadow-gray-500">
             <video
@@ -306,7 +349,7 @@ const AboutUs = () => {
               onEnded={(e) => e.target.play()}
             >
               <source
-                src="https://res.cloudinary.com/dragkodnu/video/upload/v1743306230/Rectangle%20Videos/fp2rmpv19sccnxkaku7m.mp4"
+                src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/ccwmnytgtaqprypzodgv"
                 type="video/mp4"
               />
             </video>
@@ -368,7 +411,7 @@ const AboutUs = () => {
                 </p>
               </FadeInView>
 
-              <SlideInView direction="right" delay={0.4}>
+              <SlideInView direction="left" delay={0.4}>
                 <div className="bg-gray-900 rounded-lg p-8 mt-8">
                   <h3 className="text-xl font-semibold mb-4 flex items-center">
                     <span className="text-2xl mr-3">✨</span>
