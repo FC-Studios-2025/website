@@ -381,7 +381,7 @@ const Landing = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <BasicButton onClick={handleEmailClick}>
-                    Get Details
+                    Drop Us a Line
                   </BasicButton>
                 </motion.div>
               </div>
