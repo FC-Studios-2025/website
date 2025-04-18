@@ -11,6 +11,7 @@ import ContactForm from "../components/ContactForm";
 import ResponsiveSection from "../components/ResponsiveSection";
 import HeroText from "../components/HeroText";
 import CreativeApproachComponent from "../components/CreativeApproachComponent";
+import SecondaryHeroText from "../components/SecondaryHeroText";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -263,7 +264,7 @@ const Landing = () => {
         </section>
 
 
-        
+        <SecondaryHeroText/>
         
 
         <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
