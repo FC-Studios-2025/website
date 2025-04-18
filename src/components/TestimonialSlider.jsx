@@ -14,7 +14,7 @@ const TestimonialSlider = () => {
       name: "Christopher Hall",
       role: "",
       content:
-        "Amazing Quality! I am thrilled with the results from the team. Customer service was amazing — 5 stars. They took the time to understand our needs and delivered a video that was engaging and of the highest quality. Outstanding work, Film Craft Studios!",
+        "Top Class from Start to Finish Can’t thank the team enough — they absolutely nailed it. Right from our first chat, they listened carefully and took the time to understand exactly what we needed. The final product was slick, engaging, and genuinely exceeded our expectations. Great experience all round.",
       image: "/images/testimonial-1.jpg", // Update image paths if you have specific client photos
     },
     {
@@ -22,7 +22,7 @@ const TestimonialSlider = () => {
       name: "Michael Johnson",
       role: "",
       content:
-        "Exceptional Creativity and Customer Service. The creativity and expertise of Film Craft Studios are unmatched. Not only did they deliver a high-quality video, but they also did it quickly. Their efficiency and professionalism are commendable. Highly satisfied!",
+        "Not Just Creative – Organised Too I’ve worked with creative teams before who were great with ideas but chaotic with delivery. This wasn’t like that. Film Craft brought loads of creativity to the table, but they also ran asmooth process — clear timelines, updates, and no confusion. The final cut looked brilliant. Nice balance of creative and professional.",
       image: "/src/assets/userIcon.png",
     },
     {
@@ -30,7 +30,7 @@ const TestimonialSlider = () => {
       name: "Emma Elliott",
       role: "",
       content:
-        "Excellent Customer Service. A huge thank you to the FCS Team. They have been super helpful and professional since day one — which has been just under a year now. Always very supportive and efficient with all of our projects, guiding us through the entire process. Looking forward to working with you guys for a very long time.",
+        "A Pleasure to Work With The team at FCS have been an absolute joy to work with over the past year. Always reliable, always professional, and nothing’s ever too much trouble. They’ve helped us shape multiple projects with brilliant guidance and support every time. Looking forward to working together for many more.",
       image: "/images/testimonial-3.jpg",
     },
     {
