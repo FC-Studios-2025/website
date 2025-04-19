@@ -124,6 +124,14 @@ const NavBar = () => {
                   Testimonials
                 </Link>
               </div>
+              <div className="hover:scale-105 transition-transform duration-300 ease-in-out">
+                <Link
+                  to="/contact"
+                  className="text-gray-300 hover:text-white transition-colors ease-in-out"
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
 
             <div>
@@ -238,6 +246,13 @@ const NavBar = () => {
               onClick={() => setMobileMenuOpen(false)}
             >
               Testimonials
+            </Link>
+            <Link
+              to="/contact"
+              className="text-gray-300 hover:text-white transition-colors py-2 text-lg"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
             </Link>
 
             <div className="pt-4 space-y-4">
