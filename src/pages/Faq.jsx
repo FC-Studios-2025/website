@@ -24,11 +24,11 @@ const faqs = [
     answer: (
       <>
         Getting started is easy. Reach out through our{" "}
-        <Link to="/contact" className="underline">
+        <Link to="/contact" className="underline text-blue-400">
           Contact Us
         </Link>{" "}
         page or email us directly by{" "}
-        <a href="mailto:info@filmcraftstudios.com" className="underline">
+        <a href="mailto:info@filmcraftstudios.com" className="underline text-blue-400">
           clicking here
         </a>
         . We'll arrange a consultation to discuss your goals, requirements, and
@@ -92,7 +92,7 @@ const faqs = [
       <>
         Pricing varies based on factors like editing complexity, video length,
         and additional services. For an accurate quote, please{" "}
-        <Link to="/contact" className="underline">
+        <Link to="/contact" className="underline text-blue-400">
           contact us
         </Link>{" "}
         directly.
@@ -168,7 +168,7 @@ const FAQ = () => {
       />
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="top-[60%] right-[0%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[130%]"
+        positionClass="top-[60%] right-[0%] md:top-[90%] md:translate-x-[70%] lg:translate-x-[55%] lg:top-[120%]"
       />
 
       <NavBar />

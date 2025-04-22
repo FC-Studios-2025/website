@@ -126,26 +126,50 @@ const Landing = () => {
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg: lg:top-[180%] lg:-translate-x-[50%]"
+        positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg:top-[180%] lg:-translate-x-[50%]"
       />
       {/*  */}
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="top-[180%] right-[0%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
+        positionClass="top-[180%] right-[0%] md:top-[410%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[330%]"
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[260%] left-0 -translate-x-[50%] md:top-[380%] lg: lg:top-[400%] lg:-translate-x-[50%]"
+        positionClass="top-[260%] left-0 -translate-x-[50%] md:top-[560%] lg:top-[400%] lg:-translate-x-[50%]"
+      />
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[300%] right-[0%] md:top-[790%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[490%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[410%] left-0 -translate-x-[50%] md:top-[870%] lg:top-[560%] lg:-translate-x-[50%]"
+      />
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[460%] right-[0%] md:top-[1000%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[690%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[560%] left-0 -translate-x-[50%] md:top-[1100%] lg:top-[720%] lg:-translate-x-[50%]"
+      />
+      <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[640%] right-[0%] md:top-[1300%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[860%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[700%] left-0 -translate-x-[50%] md:top-[1450%] lg:top-[1040%] lg:-translate-x-[50%]"
       />
       {/*  */}
-      <BlurredCircle
+      {/* <BlurredCircle
         color="bg-blue-400"
         positionClass="top-[320%] right-[0%] md:hidden"
       />
       <BlurredCircle
         color="bg-green-400"
         positionClass="top-[400%] left-0 -translate-x-[50%] md:hidden"
-      />
+      /> */}
 
       {/* Navigation bar - full width */}
       <div className="w-full">

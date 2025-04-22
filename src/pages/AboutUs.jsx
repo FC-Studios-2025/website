@@ -88,15 +88,23 @@ const AboutUs = () => {
         color="bg-green-400"
         positionClass="top-[110%] left-0 -translate-x-[50%] md:top-[180%] lg: lg:top-[180%] lg:-translate-x-[50%]"
       />
-      {/*  */}
       <BlurredCircle
+        color="bg-blue-400"
+        positionClass="top-[160%] right-[0%] md:top-[260%] md:translate-x-[70%] lg:translate-x-[60%] lg:top-[250%]"
+      />
+      <BlurredCircle
+        color="bg-green-400"
+        positionClass="top-[240%] left-0 -translate-x-[50%] md:top-[360%] lg: lg:top-[320%] lg:-translate-x-[50%]"
+      />
+      {/*  */}
+      {/* <BlurredCircle
         color="bg-blue-400"
         positionClass="top-[180%] right-[0%] md:hidden"
       />
       <BlurredCircle
         color="bg-green-400"
         positionClass="top-[260%] left-0 -translate-x-[50%] md:hidden"
-      />
+      /> */}
       {/*  */}
       <BlurredCircle
         color="bg-blue-400"
@@ -104,7 +112,7 @@ const AboutUs = () => {
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[400%] left-0 -translate-x-[50%] md:hidden"
+        positionClass="top-[360%] left-0 -translate-x-[50%] md:hidden"
       />
 
       <div>

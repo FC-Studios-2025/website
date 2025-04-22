@@ -32,13 +32,12 @@ const PrivacyPolicy = () => {
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden bg-black text-white">
       {/* Background Blurs */}
       <BlurredCircle
-        color="bg-purple-400"
-        positionClass="-top-[10%] left-[5%]"
+        color="bg-blue-400"
+        positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"
       />
-      <BlurredCircle color="bg-pink-400" positionClass="top-[80%] right-[0%]" />
       <BlurredCircle
-        color="bg-purple-400"
-        positionClass="top-[110%] left-[10%]"
+        color="bg-green-400"
+        positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
       />
 
       <NavBar />
@@ -121,7 +120,7 @@ const PrivacyPolicy = () => {
               <p>
                 If you have any concerns or questions about how your information
                 is handled, please{" "}
-                <Link to="/contact" className="underline text-white">
+                <Link to="/contact" className="underline text-blue-400">
                   contact us
                 </Link>
                 .

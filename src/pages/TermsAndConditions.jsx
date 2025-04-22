@@ -32,15 +32,11 @@ const TermsAndConditions = () => {
       {/* Background Blurs */}
       <BlurredCircle
         color="bg-blue-400"
-        positionClass="-top-[10%] left-[10%]"
+        positionClass="-top-[12%] left-[20%] md:-top-[40%] md:left-[15%] lg:left-[22%] lg:-top-[20%]"
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[60%] right-[0%]"
-      />
-      <BlurredCircle
-        color="bg-blue-400"
-        positionClass="top-[110%] left-0 -translate-x-[50%]"
+        positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
       />
 
       <NavBar />
@@ -79,7 +75,7 @@ const TermsAndConditions = () => {
               </h2>
               <p>
                 Please review our{" "}
-                <a href="/privacy-policy" className="underline text-white">
+                <a href="/privacy-policy" className="underline text-blue-400">
                   Privacy Policy
                 </a>{" "}
                 for how we handle your data.
@@ -242,7 +238,7 @@ const TermsAndConditions = () => {
                 For concerns or clarification, email us at{" "}
                 <a
                   href="mailto:info@filmcraftstudios.com"
-                  className="underline text-white"
+                  className="underline text-blue-400"
                 >
                   info@filmcraftstudios.com
                 </a>
