@@ -22,7 +22,7 @@ const TestimonialSlider = () => {
       name: "Michael Johnson",
       role: "",
       content:
-        "Not Just Creative – Organised Too I’ve worked with creative teams before who were great with ideas but chaotic with delivery. This wasn’t like that. Film Craft brought loads of creativity to the table, but they also ran asmooth process — clear timelines, updates, and no confusion. The final cut looked brilliant. Nice balance of creative and professional.",
+        "Not Just Creative – Organised Too I’ve worked with creative teams full of ideas but chaotic in delivery — not the case here. Film Craft brought great creativity and ran a smooth, professional process with clear timelines and updates. The final cut looked brilliant. A perfect balance.",
       image: "/src/assets/userIcon.png",
     },
     {
@@ -35,7 +35,7 @@ const TestimonialSlider = () => {
     },
     {
       id: 4,
-      name: "David Wilson",
+      name: "Sophie Langford",
       role: "",
       content:
         "More Than Just a Video It wasn’t just about visuals — they helped us shape the whole message. We came in thinking we needed a simple promo video, but they pushed the concept further and gave it meaning. The final version had real polish, but also real substance. That’s rare, in my experience.",

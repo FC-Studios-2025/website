@@ -37,7 +37,7 @@ const TestimonialsPage = () => {
     },
     {
       id: 5,
-      name: "Sophie Langford",
+      name: "David Wilson",
       company: "",
       image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/z9dfxfhewtbgw6zvopij",
       text: "Didn’t Know What to Expect – Pleasantly Surprised Honestly, I wasn’t sure what working with a production company would be like, since it was our first time doing a video. I thought it might be all technical jargon and back-and-forth emails — but the team at Film Craft Studios made it straightforward. They explained things clearly, didn’t over complicate anything, and listened.",
