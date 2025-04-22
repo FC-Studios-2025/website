@@ -45,7 +45,31 @@ const Contact = () => {
       /> */}
       <NavBar />
 
-      <main className="relative py-20 md:pt-48">
+      {/* Banner */}
+<div className="w-full flex flex-col md:flex-row md:h-[400px] mt-18 md:mt-24">
+  {/* Image Section */}
+  <div className="w-full md:w-2/3">
+    <img
+      src="https://images.unsplash.com/photo-1533750349088-cd871a92f312"
+      alt="Privacy Banner"
+      className="w-full h-64 md:h-full object-cover object-center"
+      loading="lazy"
+    />
+  </div>
+
+  {/* Text Section */}
+  <div className="w-full md:w-1/3 flex flex-col justify-center bg-amber-100 p-6 md:p-10">
+    <h1 className="text-3xl md:text-5xl font-bold text-black mb-4">
+      Privacy <span className="italic font-light">Policy</span>
+    </h1>
+    <p className="text-black text-base md:text-lg">
+      Learn how we handle your personal data and what steps we take to protect your privacy.
+    </p>
+  </div>
+</div>
+
+
+      <main className="relative py-20 md:pt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeInView>
             <h1 className="text-3xl md:text-5xl font-bold mb-6">

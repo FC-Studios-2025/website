@@ -42,12 +42,29 @@ const TermsAndConditions = () => {
       <NavBar />
 
       {/* External Horizontal Banner */}
-      <img
-        src="https://images.unsplash.com/photo-1600369672203-d3a9e5c35692"
-        alt="Terms Banner"
-        className="w-full h-64 object-cover object-center"
-        loading="lazy"
-      />
+      {/* Banner */}
+<div className="w-full flex flex-col md:flex-row md:h-[400px] mt-18 md:mt-24">
+  {/* Image Section */}
+  <div className="w-full md:w-2/3">
+    <img
+      src="https://images.unsplash.com/photo-1533750349088-cd871a92f312"
+      alt="Privacy Banner"
+      className="w-full h-64 md:h-full object-cover object-center"
+      loading="lazy"
+    />
+  </div>
+
+  {/* Text Section */}
+  <div className="w-full md:w-1/3 flex flex-col justify-center bg-amber-100 p-6 md:p-10">
+    <h1 className="text-3xl md:text-5xl font-bold text-black mb-4">
+      Terms & <span className="italic font-light">Conditions</span>
+    </h1>
+    <p className="text-black text-base md:text-lg">
+      Learn how we handle your personal data and what steps we take to protect your privacy.
+    </p>
+  </div>
+</div>
+
 
       <div className="w-full max-w-7xl px-6 md:px-12 lg:px-20 py-24">
         <FadeInView>
