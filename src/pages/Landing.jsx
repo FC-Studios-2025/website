@@ -159,7 +159,7 @@ const Landing = () => {
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[700%] left-0 -translate-x-[50%] md:top-[1450%] lg:top-[1040%] lg:-translate-x-[50%]"
+        positionClass="top-[700%] left-0 -translate-x-[50%] md:top-[1450%] lg:top-[1000%] lg:-translate-x-[50%]"
       />
       {/*  */}
       {/* <BlurredCircle

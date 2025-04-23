@@ -56,13 +56,28 @@ const PrivacyPolicy = () => {
 
         {/* Text Section */}
         <div className="w-full md:w-1/3 flex flex-col justify-center bg-amber-100 p-6 md:p-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-black mb-4">
-            Privacy <span className="italic font-light">Policy</span>
-          </h1>
-          <p className="text-black text-base md:text-lg">
-            Learn how we handle your personal data and what steps we take to
-            protect your privacy.
-          </p>
+          <div className="flex flex-col md:flex-row items-center mb-4">
+            <div className="w-auto h-auto mb-4 md:mb-0 md:mr-4">
+              <iframe
+                src="https://lottie.host/embed/03122dcb-fb98-435f-b134-d8188bd8918b/m2EnLbo3L7.json"
+                className="w-full h-full"
+              ></iframe>
+            </div>
+            <p className="text-black text-base md:text-lg mb-4">
+              We respect your privacy and are committed to protecting your
+              personal information; this policy outlines how we collect, use,
+              and safeguard your data.
+            </p>
+          </div>
+
+          <h3 className="text-lg font-medium text-gray-800 mb-2">Email</h3>
+
+          <a
+            href="mailto:info@filmcraftstudios.com"
+            className="text-blue-600 hover:text-blue-800 transition-colors text-base md:text-lg font-medium underline"
+          >
+            info@filmcraftstudios.com
+          </a>
         </div>
       </div>
 

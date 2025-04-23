@@ -94,7 +94,7 @@ const AboutUs = () => {
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[240%] left-0 -translate-x-[50%] md:top-[360%] lg: lg:top-[320%] lg:-translate-x-[50%]"
+        positionClass="top-[240%] left-0 -translate-x-[50%] md:top-[360%] lg: lg:top-[260%] lg:-translate-x-[50%]"
       />
       {/*  */}
       {/* <BlurredCircle
