@@ -219,23 +219,25 @@ const Landing = () => {
               Why Choose Film Craft{" "}
               <span className="italic font-light">Studios</span> ?
             </h2>
+            <p className="text-xl font-light py-2 md:py-4 text-gray-200">We make creative projects seamless — with a thoughtful, client-first approach that puts your
+            vision at the centre.</p>
           </FadeInView>
 
           {/* Grid Container */}
           <div>
             <SlideInView direction="left">
               <ResponsiveSection
-                heading1={"Limited Creative Input"}
+                heading1={"Creative Collaboration, Not Limitation"}
                 description1={
-                  "Some companies may follow a rigid approach, limiting creative input from the customer and resulting in generic content that fails to stand out."
+                  "We work closely with you from the outset, valuing your input and shaping it into something unique and engaging."
                 }
                 imgUrl1={
                   "https://res.cloudinary.com/dragkodnu/image/upload/v1744279789/Images/card1img.jpg"
                 }
                 altText1={"gifAnimation"}
-                heading2={"Lack of Communication"}
+                heading2={"Clear, Consistent Communication"}
                 description2={
-                  "Customers may struggle to effectively communicate their vision, leading to misunderstandings and unsatisfactory results. "
+                  "We keep communication open and straightforward throughout, so you always know where things stand — no chasing, no confusion. "
                 }
                 imgUrl2={
                   "https://assets4.lottiefiles.com/packages/lf20_zxmqc93z.json"
@@ -246,17 +248,17 @@ const Landing = () => {
 
             <SlideInView direction="right" delay={0.2}>
               <ResponsiveSection
-                heading1={"High Costs"}
+                heading1={"Fair and Honest Pricing"}
                 description1={
-                  "Many video editing and content creation companies charge exorbitant prices, making their services inaccessible to customers with smaller budgets."
+                  "High-quality content shouldn’t break the bank. Our pricing is honest, competitive, and free from hidden extras — so you can budget with confidence."
                 }
                 imgUrl1={
                   "https://res.cloudinary.com/dragkodnu/image/upload/v1744279790/Images/card2img.jpg"
                 }
                 altText1={"gifAnimation"}
-                heading2={"Lengthy Turnaround Times"}
+                heading2={"Reliable Turnarounds, Without Compromise"}
                 description2={
-                  "Delays in delivering the final product can hinder timely marketing campaigns or other important initiatives"
+                  "We know timing matters — whether it’s a launch or campaign, we stick to deadlines and deliver on time without compromising on quality."
                 }
                 imgUrl2={
                   "https://assets2.lottiefiles.com/packages/lf20_f8xnmcvu.json"
@@ -268,7 +270,7 @@ const Landing = () => {
         </div>
 
         <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
-          <FadeInView delay={0.7}>
+          <FadeInView delay={0.3}>
             <div className="relative aspect-video shadow-lg shadow-gray-500">
               <video
                 autoPlay
@@ -292,7 +294,7 @@ const Landing = () => {
         
 
         <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
-          <FadeInView delay={0.7}>
+          <FadeInView delay={0.4}>
             <div className="relative aspect-video shadow-lg shadow-gray-500">
               <video
                 autoPlay

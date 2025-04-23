@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
         {/* Image Section */}
         <div className="w-full md:w-2/3">
           <img
-            src="https://images.unsplash.com/photo-1533750349088-cd871a92f312"
+            src="https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Extras/w5urcck4twt4xlumkmqa"
             alt="Privacy Banner"
             className="w-full h-64 md:h-full object-cover object-center"
             loading="lazy"
@@ -55,7 +55,7 @@ const PrivacyPolicy = () => {
         </div>
 
         {/* Text Section */}
-        <div className="w-full md:w-1/3 flex flex-col justify-center bg-amber-100 p-6 md:p-10">
+        <div className="w-full md:w-1/3 flex flex-col justify-center bg-gray-800 p-6 md:p-10">
           <div className="flex flex-col md:flex-row items-center mb-4">
             <div className="w-auto h-auto mb-4 md:mb-0 md:mr-4">
               <iframe
@@ -63,18 +63,18 @@ const PrivacyPolicy = () => {
                 className="w-full h-full"
               ></iframe>
             </div>
-            <p className="text-black text-base md:text-lg mb-4">
+            <p className="text-gray-200 text-base md:text-lg mb-4">
               We respect your privacy and are committed to protecting your
               personal information; this policy outlines how we collect, use,
               and safeguard your data.
             </p>
           </div>
 
-          <h3 className="text-lg font-medium text-gray-800 mb-2">Email</h3>
+          <h3 className="text-2xl font-medium text-white mb-2">Email</h3>
 
           <a
             href="mailto:info@filmcraftstudios.com"
-            className="text-blue-600 hover:text-blue-800 transition-colors text-base md:text-lg font-medium underline"
+            className="text-blue-400 hover:text-blue-500 transition-colors text-base md:text-lg font-medium underline"
           >
             info@filmcraftstudios.com
           </a>

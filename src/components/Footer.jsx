@@ -120,7 +120,7 @@ const Footer = () => {
               <h3 className="font-medium mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
                 <li onClick={handleEmailClick}>info@filmcraftstudios.com</li>
-                <li>+1 (555) 123-4567</li>
+                <li>01273-807674</li>
                 <li>M George Corporation LTD</li>
                 <li>86-90 Paul Street</li>
                 <li>London, England EC2A 4NE</li>
