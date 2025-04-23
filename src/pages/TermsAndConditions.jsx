@@ -39,7 +39,7 @@ const TermsAndConditions = () => {
         positionClass="-top-[12%] right-[20%] md:-top-[40%] md:right-[15%] lg:right-[22%] lg:-top-[20%]"
       />
 
-      <NavBar />
+      {/* <NavBar /> */}
 
       {/* External Horizontal Banner */}
       {/* Banner */}

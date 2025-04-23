@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import FCSlogo from "../assets/FCSlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,8 +10,22 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
+  const { pathname } = useLocation();
   const handleEmailClick = () => {
     window.location.href = "mailto:info@filmcraftstudios.com";
+  };
+
+  // Function to handle navigation link clicks
+  const handleNavLinkClick = (e, path) => {
+    // If clicking on the current page's link
+    if (pathname === path) {
+      e.preventDefault(); // Prevent default navigation
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
+    // Otherwise, let normal navigation happen
   };
 
   return (
@@ -43,24 +57,28 @@ const Footer = () => {
                   <Link
                     to="/"
                     className="hover:text-teal-400 transition-colors block"
+                    onClick={(e) => handleNavLinkClick(e, "/")}
                   >
                     Home
                   </Link>
                   <Link
                     to="/about"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/about")}
                   >
                     About Us
                   </Link>
                   <Link
                     to="/works"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/works")}
                   >
                     Our Works
                   </Link>
                   <Link
                     to="/testimonials"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/testimonials")}
                   >
                     Testimonials
                   </Link>
@@ -69,24 +87,28 @@ const Footer = () => {
                   <Link
                     to="/contact"
                     className="hover:text-teal-400 transition-colors block"
+                    onClick={(e) => handleNavLinkClick(e, "/contact")}
                   >
                     Contact Us
                   </Link>
                   <Link
                     to="/faq"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/faq")}
                   >
                     FAQs
                   </Link>
                   <Link
                     to="/tnc"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/tnc")}
                   >
                     Terms & Conditions
                   </Link>
                   <Link
                     to="/privacy"
                     className="hover:text-teal-400 transition-colors block mt-2"
+                    onClick={(e) => handleNavLinkClick(e, "/privacy")}
                   >
                     Privacy Policy
                   </Link>
@@ -99,8 +121,9 @@ const Footer = () => {
               <ul className="space-y-2 text-gray-400">
                 <li onClick={handleEmailClick}>info@filmcraftstudios.com</li>
                 <li>+1 (555) 123-4567</li>
-                <li>123 Creative Ave, Suite 101</li>
-                <li>Los Angeles, CA 90001</li>
+                <li>M George Corporation LTD</li>
+                <li>86-90 Paul Street</li>
+                <li>London, England EC2A 4NE</li>
               </ul>
             </div>
           </div>
