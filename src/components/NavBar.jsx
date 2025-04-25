@@ -68,6 +68,12 @@ const NavBar = () => {
     window.location.href = "mailto:info@filmcraftstudios.com";
   };
 
+  const whatsappNumber = "447352981548";
+  const message = "Hello, I would like to know more about your services.";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    message
+  )}`;
+
   return (
     <>
       <nav
@@ -146,6 +152,7 @@ const NavBar = () => {
             </div>
             <div>
               <BasicButton
+                href={whatsappLink}
                 iconLeft={<FaWhatsapp />}
                 variant="primary"
                 size="medium"
@@ -257,7 +264,7 @@ const NavBar = () => {
 
             <div className="pt-4 space-y-4">
               <BasicButton
-              onClick={handleEmailClick}
+                onClick={handleEmailClick}
                 iconLeft={<FaEnvelope />}
                 variant="primary"
                 size="medium"
@@ -266,6 +273,7 @@ const NavBar = () => {
                 Mail
               </BasicButton>
               <BasicButton
+                href={whatsappLink}
                 iconLeft={<FaWhatsapp />}
                 variant="primary"
                 size="medium"

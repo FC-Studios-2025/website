@@ -109,6 +109,68 @@ const approachesList2 = [
 ];
 
 const Landing = () => {
+  // Video data formatted for the ReelVideoCarousel component
+  const CGIreelsData = [
+    {
+      id: "video1",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video2",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video8",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video9",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video10",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video11",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
+      aspectRatio: "9/16",
+    },
+  ];
+
+  const VideoEditing = [
+    {
+      id: "video3",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video4",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video5",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video6",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video7",
+      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
+      aspectRatio: "9/16",
+    },
+  ];
+
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
       <BlurredCircle
@@ -219,8 +281,10 @@ const Landing = () => {
               Why Choose Film Craft{" "}
               <span className="italic font-light">Studios</span> ?
             </h2>
-            <p className="text-xl font-light py-2 md:py-4 text-gray-200">We make creative projects seamless — with a thoughtful, client-first approach that puts your
-            vision at the centre.</p>
+            <p className="text-xl font-light py-2 md:py-4 text-gray-200">
+              We make creative projects seamless — with a thoughtful,
+              client-first approach that puts your vision at the centre.
+            </p>
           </FadeInView>
 
           {/* Grid Container */}
@@ -289,9 +353,7 @@ const Landing = () => {
           </FadeInView>
         </section>
 
-
-        <SecondaryHeroText/>
-        
+        <SecondaryHeroText />
 
         <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:p-18">
           <FadeInView delay={0.4}>
@@ -351,7 +413,23 @@ const Landing = () => {
         </div>
 
         {/* Video carousels - full width sections */}
-        <div className="text-white pb-16">
+        <div className="text-white">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Video <span className="italic font-light">Editing</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <ReelVideoCarousel
+              videos={VideoEditing}
+              // carouselTitle="Featured Reels"
+              // containerClassName="bg-white py-8"
+            />
+          </FadeInView>
+        </div>
+        <div className="text-white py-16">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
               <h2>
@@ -359,8 +437,13 @@ const Landing = () => {
               </h2>
             </div>
           </FadeInView>
+
           <FadeInView delay={0.2}>
-            <ReelVideoCarousel />
+            <ReelVideoCarousel
+              videos={CGIreelsData}
+              // carouselTitle="Featured Reels"
+              // containerClassName="bg-white py-8"
+            />
           </FadeInView>
         </div>
 

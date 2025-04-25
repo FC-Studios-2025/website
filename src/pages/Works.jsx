@@ -70,6 +70,68 @@ const SlideInView = ({
   );
 };
 
+// Video data formatted for the ReelVideoCarousel component
+const CGIreelsData = [
+  {
+    id: "video1",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video2",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video8",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video9",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video10",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video11",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
+    aspectRatio: "9/16",
+  },
+];
+
+const VideoEditing = [
+  {
+    id: "video3",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video4",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video5",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video6",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
+    aspectRatio: "9/16",
+  },
+  {
+    id: "video7",
+    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
+    aspectRatio: "9/16",
+  },
+];
+
 const Works = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
@@ -108,32 +170,25 @@ const Works = () => {
         <NavBar />
       </div>
       <div className="w-full max-w-full sm:max-w-xl md:max-w-3xl lg:max-w-7xl px-4 sm:px-6 md:px-8 mx-auto mt-18 md:mt-24">
-
-      <FadeInView>
+        <FadeInView>
           <div className="text-white py-10 md:py-16">
-            <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl mb-4">Our Creative <span className="italic font-light">Portfolio</span></h1>
+            <h1 className="font-bold text-2xl md:text-3xl lg:text-5xl mb-4">
+              Our Creative <span className="italic font-light">Portfolio</span>
+            </h1>
             <p className="text-lg text-gray-300 mb-6 max-w-3xl">
-              Welcome to our showcase of visual stories. Each project represents our commitment to crafting compelling narratives through innovative visuals and cutting-edge techniques.
+              Welcome to our showcase of visual stories. Each project represents
+              our commitment to crafting compelling narratives through
+              innovative visuals and cutting-edge techniques.
             </p>
             <p className="text-gray-400 mb-8 max-w-2xl">
-              Browse through our collection of work spanning various industries and styles. From captivating CGI animations to dynamic motion graphics, our portfolio demonstrates our versatility and creative approach to visual storytelling.
+              Browse through our collection of work spanning various industries
+              and styles. From captivating CGI animations to dynamic motion
+              graphics, our portfolio demonstrates our versatility and creative
+              approach to visual storytelling.
             </p>
           </div>
         </FadeInView>
-        
-        <div className="text-white py-16">
-          <FadeInView>
-            <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
-              <h2>
-                CGI <span className="italic font-light">Videos</span>
-              </h2>
-            </div>
-          </FadeInView>
-          
-          <FadeInView delay={0.2}>
-            <ReelVideoCarousel />
-          </FadeInView>
-        </div>
+
         <div className="text-white">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
@@ -143,7 +198,28 @@ const Works = () => {
             </div>
           </FadeInView>
           <FadeInView delay={0.2}>
-            
+            <ReelVideoCarousel
+              videos={VideoEditing}
+              // carouselTitle="Featured Reels"
+              // containerClassName="bg-white py-8"
+            />
+          </FadeInView>
+        </div>
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl overflow-hidden">
+              <h2>
+                CGI <span className="italic font-light">Videos</span>
+              </h2>
+            </div>
+          </FadeInView>
+
+          <FadeInView delay={0.2}>
+            <ReelVideoCarousel
+              videos={CGIreelsData}
+              // carouselTitle="Featured Reels"
+              // containerClassName="bg-white py-8"
+            />
           </FadeInView>
         </div>
         <div className="text-white">

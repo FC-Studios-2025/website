@@ -65,6 +65,27 @@ const SqVideoCarousel = () => {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRefs = useRef({});
   const [previousIndex, setPreviousIndex] = useState(null);
+  const autoAdvanceTimerRef = useRef(null);
+
+  const advanceToNextSlide = () => {
+    if (swiperRef.current?.swiper) {
+      swiperRef.current.swiper.slideNext();
+    }
+  };
+
+  const resetAutoAdvanceTimer = () => {
+    // Clear any existing timer
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+    }
+    
+    // Set a new timer to advance to the next slide after 5 seconds
+    if (isPlaying) {
+      autoAdvanceTimerRef.current = setTimeout(() => {
+        advanceToNextSlide();
+      }, 5000);
+    }
+  };
 
   const handleSlideChange = (swiper) => {
     const newIndex = swiper.realIndex;
@@ -72,6 +93,11 @@ const SqVideoCarousel = () => {
     // Store the previous index before updating to the new one
     setPreviousIndex(activeIndex);
     setActiveIndex(newIndex);
+
+    // Clear auto advance timer when changing slides
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+    }
 
     // Immediately pause the previous video
     if (previousIndex !== null && previousIndex !== newIndex) {
@@ -93,7 +119,12 @@ const SqVideoCarousel = () => {
     setTimeout(() => {
       const currentVideo = videoRefs.current[videoData[newIndex].id];
       if (currentVideo && isPlaying) {
-        currentVideo.play().catch(err => console.log("Autoplay prevented:", err));
+        currentVideo.play()
+          .then(() => {
+            // Start the auto-advance timer when the video starts playing
+            resetAutoAdvanceTimer();
+          })
+          .catch(err => console.log("Autoplay prevented:", err));
       }
     }, 100);
   };
@@ -105,8 +136,17 @@ const SqVideoCarousel = () => {
 
     if (isPlaying) {
       currentVideo.pause();
+      // Clear the auto-advance timer when pausing
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+      }
     } else {
-      currentVideo.play().catch(err => console.log("Play prevented:", err));
+      currentVideo.play()
+        .then(() => {
+          // Reset the auto-advance timer when resuming playback
+          resetAutoAdvanceTimer();
+        })
+        .catch(err => console.log("Play prevented:", err));
     }
     setIsPlaying(!isPlaying);
   };
@@ -171,11 +211,22 @@ const SqVideoCarousel = () => {
     const timer = setTimeout(() => {
       const firstVideo = videoRefs.current[videoData[0].id];
       if (firstVideo) {
-        firstVideo.play().catch(err => console.log("Initial autoplay prevented:", err));
+        firstVideo.play()
+          .then(() => {
+            // Start the auto-advance timer for the first video
+            resetAutoAdvanceTimer();
+          })
+          .catch(err => console.log("Initial autoplay prevented:", err));
       }
     }, 100);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      // Clean up the auto-advance timer when unmounting
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+      }
+    };
   }, []);
 
   // Ensure only one video plays at a time when activeIndex changes
@@ -187,11 +238,36 @@ const SqVideoCarousel = () => {
         if (videoIndex !== activeIndex) {
           videoEl.pause();
         } else if (isPlaying) {
-          videoEl.play().catch(err => console.log("Play prevented:", err));
+          videoEl.play()
+            .then(() => {
+              // Reset the auto-advance timer when the active video changes
+              resetAutoAdvanceTimer();
+            })
+            .catch(err => console.log("Play prevented:", err));
         }
       }
     });
   }, [activeIndex, isPlaying]);
+
+  // Add event listeners to track video time and reset the auto-advance timer
+  useEffect(() => {
+    const currentVideo = videoRefs.current[videoData[activeIndex]?.id];
+    
+    const handleTimeUpdate = () => {
+      // This is just to ensure the timer is reset if needed
+      // The main timer is set when the video starts playing
+    };
+    
+    if (currentVideo) {
+      currentVideo.addEventListener('timeupdate', handleTimeUpdate);
+    }
+    
+    return () => {
+      if (currentVideo) {
+        currentVideo.removeEventListener('timeupdate', handleTimeUpdate);
+      }
+    };
+  }, [activeIndex]);
 
   return (
     <div className="py-10 px-4">
@@ -244,7 +320,7 @@ const SqVideoCarousel = () => {
                 style={{ maxWidth: "100%" }}
               >
                 {/* Video title overlay */}
-                {activeIndex === index && (
+                {activeIndex === index && video.title && (
                   <div className="absolute top-0 left-0 w-full bg-gradient-to-b from-black/70 to-transparent p-4 z-10">
                     <h3 className="text-white font-medium text-lg">{video.title}</h3>
                   </div>
@@ -263,6 +339,9 @@ const SqVideoCarousel = () => {
                       // Safety check - ensure only active video plays
                       if (index !== activeIndex) {
                         e.target.pause();
+                      } else {
+                        // Reset the auto-advance timer when the video starts playing
+                        resetAutoAdvanceTimer();
                       }
                     }}
                   />

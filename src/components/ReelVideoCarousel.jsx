@@ -5,84 +5,16 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { FaChevronLeft, FaChevronRight, FaExpand, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
 
-// Sample video data with different aspect ratios
-const videoData = [
-  { 
-    id: "video1", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video2", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video3", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video4", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video5", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video6", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video7", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video8", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video9", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video10", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-  { 
-    id: "video11", 
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
-    aspectRatio: "9/16", // vertical/reel format
-    // title: "Vertical Reel" 
-  },
-];
-
-const ReelVideoCarousel = () => {
+const ReelVideoCarousel = ({ videos, containerClassName = "", carouselTitle = "" }) => {
   const swiperRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const videoRefs = useRef({});
+  const videoContainerRefs = useRef({});
   const [previousIndex, setPreviousIndex] = useState(null);
+  const autoAdvanceTimerRef = useRef(null);
   const [viewportSize, setViewportSize] = useState({
     width: typeof window !== 'undefined' ? window.innerWidth : 1200,
     height: typeof window !== 'undefined' ? window.innerHeight : 800,
@@ -113,6 +45,21 @@ const ReelVideoCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Start auto-advance timer
+  const startAutoAdvanceTimer = () => {
+    // Clear any existing timer first
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+    }
+    
+    // Set new timer to advance to next slide after 5 seconds
+    autoAdvanceTimerRef.current = setTimeout(() => {
+      if (swiperRef.current?.swiper) {
+        swiperRef.current.swiper.slideNext();
+      }
+    }, 5000); // 5 seconds timeout
+  };
+
   const handleSlideChange = (swiper) => {
     const newIndex = swiper.realIndex;
     
@@ -122,7 +69,7 @@ const ReelVideoCarousel = () => {
 
     // Immediately pause the previous video
     if (previousIndex !== null && previousIndex !== newIndex) {
-      const prevVideo = videoRefs.current[videoData[previousIndex].id];
+      const prevVideo = videoRefs.current[videos[previousIndex].id];
       if (prevVideo) {
         prevVideo.pause();
         prevVideo.currentTime = 0;
@@ -138,47 +85,65 @@ const ReelVideoCarousel = () => {
 
     // Play the active video after a short delay
     setTimeout(() => {
-      const currentVideo = videoRefs.current[videoData[newIndex].id];
+      const currentVideo = videoRefs.current[videos[newIndex].id];
       if (currentVideo && isPlaying) {
         currentVideo.play().catch(err => console.log("Autoplay prevented:", err));
       }
+      
+      // Start the auto-advance timer for the new slide
+      startAutoAdvanceTimer();
     }, 100);
   };
 
   // Toggle play/pause for the current video
   const togglePlayPause = () => {
-    const currentVideo = videoRefs.current[videoData[activeIndex].id];
+    const currentVideo = videoRefs.current[videos[activeIndex].id];
     if (!currentVideo) return;
 
     if (isPlaying) {
       currentVideo.pause();
+      // Clear auto-advance timer when paused
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+      }
     } else {
       currentVideo.play().catch(err => console.log("Play prevented:", err));
+      // Restart auto-advance timer when resumed
+      startAutoAdvanceTimer();
     }
     setIsPlaying(!isPlaying);
   };
 
   // Toggle mute/unmute for the current video
   const toggleMute = () => {
-    const currentVideo = videoRefs.current[videoData[activeIndex].id];
+    const currentVideo = videoRefs.current[videos[activeIndex].id];
     if (!currentVideo) return;
     
     currentVideo.muted = !isMuted;
     setIsMuted(!isMuted);
   };
 
-  // Toggle fullscreen for the current video
+  // Create a fullscreen container with proper aspect ratio
   const toggleFullscreen = () => {
-    const currentVideo = videoRefs.current[videoData[activeIndex].id];
-    if (!currentVideo) return;
+    // Get references to current video elements
+    const currentVideoContainer = videoContainerRefs.current[videos[activeIndex].id];
+    const currentVideo = videoRefs.current[videos[activeIndex].id];
+    
+    if (!currentVideoContainer || !currentVideo) return;
+
+    // Clear auto-advance timer when entering fullscreen
+    if (autoAdvanceTimerRef.current) {
+      clearTimeout(autoAdvanceTimerRef.current);
+    }
 
     if (!isFullscreen) {
-      if (currentVideo.requestFullscreen) {
-        currentVideo.requestFullscreen();
-      } else if (currentVideo.webkitRequestFullscreen) {
-        currentVideo.webkitRequestFullscreen();
-      } else if (currentVideo.msRequestFullscreen) {
-        currentVideo.msRequestFullscreen();
+      // Use the container div for fullscreen to maintain aspect ratio
+      if (currentVideoContainer.requestFullscreen) {
+        currentVideoContainer.requestFullscreen();
+      } else if (currentVideoContainer.webkitRequestFullscreen) {
+        currentVideoContainer.webkitRequestFullscreen();
+      } else if (currentVideoContainer.msRequestFullscreen) {
+        currentVideoContainer.msRequestFullscreen();
       }
     } else {
       if (document.exitFullscreen) {
@@ -188,6 +153,11 @@ const ReelVideoCarousel = () => {
       } else if (document.msExitFullscreen) {
         document.msExitFullscreen();
       }
+      
+      // Restart auto-advance timer when exiting fullscreen if video is playing
+      if (isPlaying) {
+        startAutoAdvanceTimer();
+      }
     }
     setIsFullscreen(!isFullscreen);
   };
@@ -195,11 +165,18 @@ const ReelVideoCarousel = () => {
   // Handle fullscreen change events
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(
+      const newFullscreenState = !!(
         document.fullscreenElement || 
         document.webkitFullscreenElement || 
         document.msFullscreenElement
       );
+      
+      setIsFullscreen(newFullscreenState);
+      
+      // If exiting fullscreen and video is playing, restart auto-advance timer
+      if (!newFullscreenState && isPlaying) {
+        startAutoAdvanceTimer();
+      }
     };
 
     document.addEventListener("fullscreenchange", handleFullscreenChange);
@@ -211,26 +188,32 @@ const ReelVideoCarousel = () => {
       document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
       document.removeEventListener("msfullscreenchange", handleFullscreenChange);
     };
-  }, []);
+  }, [isPlaying]);
 
   // Play the first video when component mounts
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const firstVideo = videoRefs.current[videoData[0].id];
-      if (firstVideo) {
-        firstVideo.play().catch(err => console.log("Initial autoplay prevented:", err));
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, []);
+    if (videos && videos.length > 0) {
+      const timer = setTimeout(() => {
+        const firstVideo = videoRefs.current[videos[0].id];
+        if (firstVideo) {
+          firstVideo.play().catch(err => console.log("Initial autoplay prevented:", err));
+          // Start auto-advance timer for the first video
+          startAutoAdvanceTimer();
+        }
+      }, 100);
+  
+      return () => clearTimeout(timer);
+    }
+  }, [videos]);
 
   // Ensure only one video plays at a time when activeIndex changes
   useEffect(() => {
+    if (!videos || videos.length === 0) return;
+    
     // Pause all videos except the active one
     Object.entries(videoRefs.current).forEach(([id, videoEl]) => {
       if (videoEl) {
-        const videoIndex = videoData.findIndex(video => video.id === id);
+        const videoIndex = videos.findIndex(video => video.id === id);
         if (videoIndex !== activeIndex) {
           videoEl.pause();
         } else if (isPlaying) {
@@ -238,11 +221,52 @@ const ReelVideoCarousel = () => {
         }
       }
     });
-  }, [activeIndex, isPlaying]);
+  }, [activeIndex, isPlaying, videos]);
+
+  // Add fullscreen styles when entering fullscreen mode
+  useEffect(() => {
+    if (isFullscreen) {
+      const currentVideoContainer = videoContainerRefs.current[videos[activeIndex].id];
+      if (currentVideoContainer) {
+        // Add specific styles for fullscreen mode
+        currentVideoContainer.style.display = "flex";
+        currentVideoContainer.style.alignItems = "center";
+        currentVideoContainer.style.justifyContent = "center";
+        currentVideoContainer.style.backgroundColor = "#000";
+        
+        // Find the video element within container and apply styles
+        const videoElement = currentVideoContainer.querySelector("video");
+        if (videoElement) {
+          // Maintain aspect ratio in fullscreen
+          videoElement.style.width = "auto";
+          videoElement.style.height = "auto";
+          videoElement.style.maxWidth = "100%";
+          videoElement.style.maxHeight = "100%";
+          videoElement.style.objectFit = "contain";
+        }
+      }
+    }
+  }, [isFullscreen, activeIndex, videos]);
+
+  // Clean up auto-advance timer when component unmounts
+  useEffect(() => {
+    return () => {
+      if (autoAdvanceTimerRef.current) {
+        clearTimeout(autoAdvanceTimerRef.current);
+      }
+    };
+  }, []);
+
+  // Reset auto-advance timer on user interaction
+  const handleUserInteraction = () => {
+    if (isPlaying) {
+      startAutoAdvanceTimer();
+    }
+  };
 
   // Get dynamic height for video container
   const getVideoContainerStyles = () => {
-    // Using aspect ratio 9:16 for vertical videos
+    // Using aspect ratio 9:16 for vertical videos (default)
     if (viewportSize.isMobile) {
       // On mobile, use a fixed height based on viewport height
       return {
@@ -277,13 +301,28 @@ const ReelVideoCarousel = () => {
     return 18;
   };
 
+  // If no videos are provided, show a placeholder or nothing
+  if (!videos || videos.length === 0) {
+    return (
+      <div className="py-8 px-4 text-center text-gray-500">
+        No videos available to display
+      </div>
+    );
+  }
+
   return (
-    <div className="py-2 px-1 sm:py-3 md:py-4 lg:py-6 xl:py-8 sm:px-2 md:px-3 lg:px-14">
+    <div className={`py-2 px-1 sm:py-3 md:py-4 lg:py-6 xl:py-8 sm:px-2 md:px-3 lg:px-14 ${containerClassName}`}>
+      {carouselTitle && (
+        <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">{carouselTitle}</h2>
+      )}
       <div className="relative w-full max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl mx-auto">
         {/* Navigation Arrows - Responsive sizes and positions */}
         <button
           className="absolute left-0 sm:left-1 md:left-2 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-1.5 sm:p-2 md:p-3 rounded-full z-10 hover:bg-black/80 transition-all"
-          onClick={() => swiperRef.current?.swiper?.slidePrev()}
+          onClick={() => {
+            swiperRef.current?.swiper?.slidePrev();
+            handleUserInteraction();
+          }}
           aria-label="Previous video"
         >
           <FaChevronLeft size={getIconSize()} />
@@ -291,7 +330,10 @@ const ReelVideoCarousel = () => {
 
         <button
           className="absolute right-0 sm:right-1 md:right-2 top-1/2 transform -translate-y-1/2 bg-black/60 text-white p-1.5 sm:p-2 md:p-3 rounded-full z-10 hover:bg-black/80 transition-all"
-          onClick={() => swiperRef.current?.swiper?.slideNext()}
+          onClick={() => {
+            swiperRef.current?.swiper?.slideNext();
+            handleUserInteraction();
+          }}
           aria-label="Next video"
         >
           <FaChevronRight size={getIconSize()} />
@@ -316,18 +358,19 @@ const ReelVideoCarousel = () => {
           }}
           className="w-xs md:w-xl lg:w-full"
         >
-          {videoData.map((video, index) => (
+          {videos.map((video, index) => (
             <SwiperSlide key={video.id} className="flex justify-center py-2 sm:py-3 md:py-4 lg:py-6">
               <div
+                ref={(el) => (videoContainerRefs.current[video.id] = el)}
                 className={`relative overflow-hidden rounded-lg shadow-xl transition-all duration-500 ${
                   activeIndex === index
                     ? "scale-100 sm:scale-102 md:scale-105 opacity-100 shadow-2xl"
                     : viewportSize.isMobile ? "scale-95 opacity-70" : "scale-90 opacity-50"
-                }`}
+                } ${isFullscreen && activeIndex === index ? "fullscreen-container" : ""}`}
                 style={getVideoContainerStyles()}
               >
                 {/* Video title overlay - responsive text size */}
-                {activeIndex === index && (
+                {video.title && activeIndex === index && (
                   <div className="absolute top-0 left-0 w-full bg-gradient-to-b from-black/70 to-transparent p-2 sm:p-3 md:p-4 z-10">
                     <h3 className="text-white font-medium text-sm sm:text-base md:text-lg">
                       {video.title}
@@ -342,7 +385,7 @@ const ReelVideoCarousel = () => {
                   loop
                   muted={isMuted}
                   playsInline
-                  className="w-full h-full object-cover"
+                  className={`w-full h-full object-cover ${isFullscreen && activeIndex === index ? "fullscreen-video" : ""}`}
                   onPlay={(e) => {
                     // Safety check - ensure only active video plays
                     if (index !== activeIndex) {
@@ -355,7 +398,10 @@ const ReelVideoCarousel = () => {
                 {activeIndex === index && (
                   <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-2 sm:p-3 md:p-4 flex justify-between items-center z-10">
                     <button 
-                      onClick={togglePlayPause}
+                      onClick={() => {
+                        togglePlayPause();
+                        handleUserInteraction();
+                      }}
                       className="text-white bg-black/40 rounded-full p-1.5 sm:p-2 md:p-2.5 hover:bg-black/60"
                       aria-label={isPlaying ? "Pause" : "Play"}
                     >
@@ -372,7 +418,10 @@ const ReelVideoCarousel = () => {
                     
                     <div className="flex space-x-2 sm:space-x-3">
                       <button 
-                        onClick={toggleMute}
+                        onClick={() => {
+                          toggleMute();
+                          handleUserInteraction();
+                        }}
                         className="text-white bg-black/40 rounded-full p-1.5 sm:p-2 md:p-2.5 hover:bg-black/60"
                         aria-label={isMuted ? "Unmute" : "Mute"}
                       >
