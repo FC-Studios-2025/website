@@ -138,6 +138,18 @@ const Works = () => {
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
               <h2>
+                Video <span className="italic font-light">Editing</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            
+          </FadeInView>
+        </div>
+        <div className="text-white">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
                 Motion <span className="italic font-light">Graphics</span>
               </h2>
             </div>

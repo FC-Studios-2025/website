@@ -159,7 +159,7 @@ const Landing = () => {
       />
       <BlurredCircle
         color="bg-green-400"
-        positionClass="top-[700%] left-0 -translate-x-[50%] md:top-[1450%] lg:top-[1000%] lg:-translate-x-[50%]"
+        positionClass="top-[700%] left-0 -translate-x-[50%] md:top-[1350%] lg:top-[920%] lg:-translate-x-[50%]"
       />
       {/*  */}
       {/* <BlurredCircle
@@ -305,7 +305,7 @@ const Landing = () => {
                 onEnded={(e) => e.target.play()}
               >
                 <source
-                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/fp2rmpv19sccnxkaku7m"
+                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/npjeidfko0kozqhcwrks"
                   type="video/mp4"
                 />
               </video>
