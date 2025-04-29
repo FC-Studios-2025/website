@@ -12,6 +12,7 @@ import ResponsiveSection from "../components/ResponsiveSection";
 import HeroText from "../components/HeroText";
 import CreativeApproachComponent from "../components/CreativeApproachComponent";
 import SecondaryHeroText from "../components/SecondaryHeroText";
+import { Link } from "react-router-dom";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -267,10 +268,19 @@ const Landing = () => {
           <div className="text-white font-light text-center md:text-2xl lg:text-3xl mt-12">
             We are Film Craft Studios. By collaborating with us, you'll enjoy
             numerous benefits that will elevate your brand's success 💯 to new
-            heights. Our bespoke production services 📽️📝 bring your ideas 💡to
+            heights. Our bespoke production services 📽️📝 bring your ideas 💡 to
             life, transforming them into captivating visual stories. With our
             expertise, your brand 🌿 will stand out and engage audiences 😊,
             leaving a lasting impact 💖.
+            <div className="flex justify-center">
+              <Link
+                to="/about"
+                className="flex items-center justify-center rounded-md font-medium transition-all duration-200 gap-2 
+               border text-white px-8 py-2 text-base hover:opacity-80 my-4 md:my-8"
+              >
+                Know More
+              </Link>
+            </div>
           </div>
         </FadeInView>
 
@@ -474,6 +484,15 @@ const Landing = () => {
           </FadeInView>
           <FadeInView delay={0.2}>
             <SqVideoCarousel />
+            <div className="flex justify-center">
+              <Link
+                to="/works"
+                className="flex items-center justify-center rounded-md font-medium transition-all duration-200 gap-2 
+               border text-white px-8 py-2 text-base hover:opacity-80 my-4 md:my-8"
+              >
+                View More
+              </Link>
+            </div>
           </FadeInView>
         </div>
 
