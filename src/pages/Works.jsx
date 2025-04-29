@@ -6,6 +6,8 @@ import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import Footer from "../components/Footer";
 import BlurredCircle from "../components/BlurredCircle";
 import { useInView } from "react-intersection-observer";
+import HorizontalVideoCarousel from "../components/HorizontalVideoCarousel";
+import SquareImageCarousel from "../components/SquareImageCarousel";
 
 // Fade-in animation component
 const FadeInView = ({
@@ -132,6 +134,68 @@ const VideoEditing = [
   },
 ];
 
+const carouselImages = [
+  {
+    id: '1',
+    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/ixnxgistndexlgsw0nx0',
+    alt: 'New Arrivals Headphone',
+  },
+  {
+    id: '2',
+    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/hkjgexftxcrvm2fw647w',
+    alt: 'Motor Cross',
+  },
+  {
+    id: '3',
+    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/uvkkcvcxtxppd0rxlduv',
+    alt: 'Start Training Today',
+  },
+  {
+    id: '4',
+    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/hkjgexftxcrvm2fw647w',
+    alt: 'Motor Cross',
+  }
+];
+
+const BusinessPromotionalVideos = [
+  {
+    id: '1',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/s3ceblco50cdofzldrkd'
+  },
+  {
+    id: '2',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/oqt27l7fvyczxqh3edyl'
+  },
+  {
+    id: '3',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/drq3dk4y9ymemes7zld3'
+  },
+  {
+    id: '4',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/drq3dk4y9ymemes7zld3'
+  },
+  // Add more videos as needed
+];
+const LogoAnimations = [
+  {
+    id: '1',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/wvumy405s37qysp47hij'
+  },
+  {
+    id: '2',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/ohqa41kabuxiufpmozb9'
+  },
+  {
+    id: '3',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/fspevybjioctnjdhjo6y'
+  },
+  {
+    id: '4',
+    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/k94lrm2oy5rbpryo3xfv'
+  },
+  // Add more videos as needed
+];
+
 const Works = () => {
   return (
     <div className="flex flex-col items-center min-h-screen w-full overflow-hidden">
@@ -222,7 +286,7 @@ const Works = () => {
             />
           </FadeInView>
         </div>
-        <div className="text-white">
+        <div className="text-white py-16">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
               <h2>
@@ -234,6 +298,43 @@ const Works = () => {
             <SqVideoCarousel />
           </FadeInView>
         </div>
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Graphical <span className="italic font-light">Posters</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <SquareImageCarousel images={carouselImages}/>
+          </FadeInView>
+        </div>
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Business Promotional <span className="italic font-light">Videos</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <HorizontalVideoCarousel videos={BusinessPromotionalVideos}/>
+          </FadeInView>
+        </div>
+        <div className="text-white py-16">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Logo <span className="italic font-light">Animations</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <HorizontalVideoCarousel videos={LogoAnimations}/>
+          </FadeInView>
+        </div>
+        
         <div>
           <Footer />
         </div>

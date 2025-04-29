@@ -3,57 +3,63 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
-import { FaChevronLeft, FaChevronRight, FaExpand, FaVolumeMute, FaVolumeUp } from "react-icons/fa";
+import {
+  FaChevronLeft,
+  FaChevronRight,
+  FaExpand,
+  FaVolumeMute,
+  FaVolumeUp,
+} from "react-icons/fa";
 
 // Sample video data with different aspect ratios
 const videoData = [
-  { 
-    id: "video1", 
+  {
+    id: "video1",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306783/Square%20Videos/sq1.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video2", 
+  {
+    id: "video2",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306782/Square%20Videos/sq2.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video3", 
+  {
+    id: "video3",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306781/Square%20Videos/sq3.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video4", 
+  {
+    id: "video4",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306780/Square%20Videos/sq4.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video5", 
+  {
+    id: "video5",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306779/Square%20Videos/sq5.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video6", 
+  {
+    id: "video6",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306778/Square%20Videos/sq6.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video7", 
+  {
+    id: "video7",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306778/Square%20Videos/sq7.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
-  { 
-    id: "video8", 
+  {
+    id: "video8",
     src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306778/Square%20Videos/sq8.mp4",
     aspectRatio: "1/1", // sq/reel format
-    // title: "Vertical Reel" 
+    // title: "Vertical Reel"
   },
 ];
 
@@ -78,7 +84,7 @@ const SqVideoCarousel = () => {
     if (autoAdvanceTimerRef.current) {
       clearTimeout(autoAdvanceTimerRef.current);
     }
-    
+
     // Set a new timer to advance to the next slide after 5 seconds
     if (isPlaying) {
       autoAdvanceTimerRef.current = setTimeout(() => {
@@ -89,7 +95,7 @@ const SqVideoCarousel = () => {
 
   const handleSlideChange = (swiper) => {
     const newIndex = swiper.realIndex;
-    
+
     // Store the previous index before updating to the new one
     setPreviousIndex(activeIndex);
     setActiveIndex(newIndex);
@@ -119,12 +125,13 @@ const SqVideoCarousel = () => {
     setTimeout(() => {
       const currentVideo = videoRefs.current[videoData[newIndex].id];
       if (currentVideo && isPlaying) {
-        currentVideo.play()
+        currentVideo
+          .play()
           .then(() => {
             // Start the auto-advance timer when the video starts playing
             resetAutoAdvanceTimer();
           })
-          .catch(err => console.log("Autoplay prevented:", err));
+          .catch((err) => console.log("Autoplay prevented:", err));
       }
     }, 100);
   };
@@ -141,12 +148,13 @@ const SqVideoCarousel = () => {
         clearTimeout(autoAdvanceTimerRef.current);
       }
     } else {
-      currentVideo.play()
+      currentVideo
+        .play()
         .then(() => {
           // Reset the auto-advance timer when resuming playback
           resetAutoAdvanceTimer();
         })
-        .catch(err => console.log("Play prevented:", err));
+        .catch((err) => console.log("Play prevented:", err));
     }
     setIsPlaying(!isPlaying);
   };
@@ -155,7 +163,7 @@ const SqVideoCarousel = () => {
   const toggleMute = () => {
     const currentVideo = videoRefs.current[videoData[activeIndex].id];
     if (!currentVideo) return;
-    
+
     currentVideo.muted = !isMuted;
     setIsMuted(!isMuted);
   };
@@ -189,9 +197,9 @@ const SqVideoCarousel = () => {
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(
-        document.fullscreenElement || 
-        document.webkitFullscreenElement || 
-        document.msFullscreenElement
+        document.fullscreenElement ||
+          document.webkitFullscreenElement ||
+          document.msFullscreenElement
       );
     };
 
@@ -201,8 +209,14 @@ const SqVideoCarousel = () => {
 
     return () => {
       document.removeEventListener("fullscreenchange", handleFullscreenChange);
-      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
-      document.removeEventListener("msfullscreenchange", handleFullscreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullscreenChange
+      );
+      document.removeEventListener(
+        "msfullscreenchange",
+        handleFullscreenChange
+      );
     };
   }, []);
 
@@ -211,12 +225,13 @@ const SqVideoCarousel = () => {
     const timer = setTimeout(() => {
       const firstVideo = videoRefs.current[videoData[0].id];
       if (firstVideo) {
-        firstVideo.play()
+        firstVideo
+          .play()
           .then(() => {
             // Start the auto-advance timer for the first video
             resetAutoAdvanceTimer();
           })
-          .catch(err => console.log("Initial autoplay prevented:", err));
+          .catch((err) => console.log("Initial autoplay prevented:", err));
       }
     }, 100);
 
@@ -234,16 +249,17 @@ const SqVideoCarousel = () => {
     // Pause all videos except the active one
     Object.entries(videoRefs.current).forEach(([id, videoEl]) => {
       if (videoEl) {
-        const videoIndex = videoData.findIndex(video => video.id === id);
+        const videoIndex = videoData.findIndex((video) => video.id === id);
         if (videoIndex !== activeIndex) {
           videoEl.pause();
         } else if (isPlaying) {
-          videoEl.play()
+          videoEl
+            .play()
             .then(() => {
               // Reset the auto-advance timer when the active video changes
               resetAutoAdvanceTimer();
             })
-            .catch(err => console.log("Play prevented:", err));
+            .catch((err) => console.log("Play prevented:", err));
         }
       }
     });
@@ -252,26 +268,25 @@ const SqVideoCarousel = () => {
   // Add event listeners to track video time and reset the auto-advance timer
   useEffect(() => {
     const currentVideo = videoRefs.current[videoData[activeIndex]?.id];
-    
+
     const handleTimeUpdate = () => {
       // This is just to ensure the timer is reset if needed
       // The main timer is set when the video starts playing
     };
-    
+
     if (currentVideo) {
-      currentVideo.addEventListener('timeupdate', handleTimeUpdate);
+      currentVideo.addEventListener("timeupdate", handleTimeUpdate);
     }
-    
+
     return () => {
       if (currentVideo) {
-        currentVideo.removeEventListener('timeupdate', handleTimeUpdate);
+        currentVideo.removeEventListener("timeupdate", handleTimeUpdate);
       }
     };
   }, [activeIndex]);
 
   return (
     <div className="py-10 px-4">
-      
       <div className="relative w-full max-w-6xl mx-auto">
         {/* Navigation Arrows */}
         <button
@@ -322,12 +337,17 @@ const SqVideoCarousel = () => {
                 {/* Video title overlay */}
                 {activeIndex === index && video.title && (
                   <div className="absolute top-0 left-0 w-full bg-gradient-to-b from-black/70 to-transparent p-4 z-10">
-                    <h3 className="text-white font-medium text-lg">{video.title}</h3>
+                    <h3 className="text-white font-medium text-lg">
+                      {video.title}
+                    </h3>
                   </div>
                 )}
-                
+
                 {/* Video container with dynamic aspect ratio */}
-                <div className="relative" style={{ aspectRatio: video.aspectRatio }}>
+                <div
+                  className="relative"
+                  style={{ aspectRatio: video.aspectRatio }}
+                >
                   <video
                     ref={(el) => (videoRefs.current[video.id] = el)}
                     src={video.src}
@@ -345,36 +365,52 @@ const SqVideoCarousel = () => {
                       }
                     }}
                   />
-                  
+
                   {/* Video controls overlay - only visible on active slide */}
                   {activeIndex === index && (
                     <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 flex justify-between items-center z-10">
-                      <button 
+                      <button
                         onClick={togglePlayPause}
                         className="text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
                         aria-label={isPlaying ? "Pause" : "Play"}
                       >
                         {isPlaying ? (
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"/>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z" />
                           </svg>
                         ) : (
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"/>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
                           </svg>
                         )}
                       </button>
-                      
+
                       <div className="flex space-x-2">
-                        <button 
+                        <button
                           onClick={toggleMute}
                           className="text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
                           aria-label={isMuted ? "Unmute" : "Mute"}
                         >
-                          {isMuted ? <FaVolumeMute size={16} /> : <FaVolumeUp size={16} />}
+                          {isMuted ? (
+                            <FaVolumeMute size={16} />
+                          ) : (
+                            <FaVolumeUp size={16} />
+                          )}
                         </button>
-                        
-                        <button 
+
+                        <button
                           onClick={toggleFullscreen}
                           className="text-white bg-black/40 rounded-full p-2 hover:bg-black/60"
                           aria-label="Fullscreen"
