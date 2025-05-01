@@ -8,7 +8,7 @@ This document serves as a technical and functional overview of the website built
 * **Frontend Stack**: React + Tailwind CSS + Vite
 * **Animations**: GSAP, Framer Motion, Lottie
 * **3D/Graphics**: OGL, Three.js, React Three Fiber
-* **Hosted On**: *(Specify: Vercel, GreenGeeks, etc.)*
+* **Hosted On**: *GreenGeeks*
 * **Developer**: Anish Jaiswal
 
 ## 🧠 Tech Stack Summary
@@ -19,7 +19,6 @@ This document serves as a technical and functional overview of the website built
 | Bundler | Vite |
 | CSS Framework | Tailwind CSS 4 |
 | Animations | Framer Motion, GSAP |
-| 3D & WebGL | Three.js, OGL, React Three Fiber |
 | Icons | FontAwesome, React Icons |
 | Forms | Formspree |
 | Carousel | Swiper.js |
@@ -30,9 +29,13 @@ This document serves as a technical and functional overview of the website built
 ```
 /src
 ├── components   # Reusable UI elements and modules
-│   ├── NavBar, Footer, HeroText
+│   ├── NavBar
+│   ├── Footer
+│   ├── HeroText
 │   ├── VideoCarousels (Reel, Horizontal, Square, etc.)
-│   ├── Testimonials, ContactForm, CircularGallery
+│   ├── Testimonials 
+│   ├── ContactForm
+│   ├── CircularGallery
 │   └── Motion/Scroll/Loading Components
 ├── pages        # Main routes/pages
 │   ├── Landing, AboutUs, Contact, FAQ
@@ -44,7 +47,6 @@ This document serves as a technical and functional overview of the website built
 
 * **Responsive Design** – Optimized for mobile, tablet, and desktop.
 * **Animated Experience** – Scroll-triggered transitions, video carousels, and dynamic text.
-* **3D Integration** – Creative components powered by Three.js & OGL for a cinematic effect.
 * **FAQ Section** – Toggleable answers using Framer Motion.
 * **Contact Form** – Functional form integrated with Formspree.
 * **Testimonials Section** – Fully customizable testimonial carousels and sliders.
@@ -128,4 +130,5 @@ For future updates or support:
 
 **Developer**: Anish Jaiswal  
 **Email**: `anishjaiswal1220@gmail.com`  
+**Contact**: `+91 7679447605`
 **Availability**: Maintenance packages provided via google docs.
