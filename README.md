@@ -7,7 +7,6 @@ This document serves as a technical and functional overview of the website built
 * **Site Type**: Portfolio + Business Website
 * **Frontend Stack**: React + Tailwind CSS + Vite
 * **Animations**: GSAP, Framer Motion, Lottie
-* **3D/Graphics**: OGL, Three.js, React Three Fiber
 * **Hosted On**: *GreenGeeks*
 * **Developer**: Anish Jaiswal
 
