@@ -1,12 +1,131 @@
-# React + Vite
+# 🎬 Film Craft Studios – Website Documentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Overview
+#
+This document serves as a technical and functional overview of the website built for **Film Craft Studios**. It is intended for both the client team and any future developers who may maintain or enhance the project.
 
-Currently, two official plugins are available:
+* **Site Type**: Portfolio + Business Website
+* **Frontend Stack**: React + Tailwind CSS + Vite
+* **Animations**: GSAP, Framer Motion, Lottie
+* **3D/Graphics**: OGL, Three.js, React Three Fiber
+* **Hosted On**: *(Specify: Vercel, GreenGeeks, etc.)*
+* **Developer**: Anish Jaiswal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Tech Stack Summary
 
-## Expanding the ESLint configuration
+| Purpose | Technology Used |
+|---------|----------------|
+| Frontend Framework | React 19 |
+| Bundler | Vite |
+| CSS Framework | Tailwind CSS 4 |
+| Animations | Framer Motion, GSAP |
+| 3D & WebGL | Three.js, OGL, React Three Fiber |
+| Icons | FontAwesome, React Icons |
+| Forms | Formspree |
+| Carousel | Swiper.js |
+| Lottie Integration | `lottie-react`, `@lottiefiles/react-lottie-player` |
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🗂 Folder Structure
+
+```
+/src
+├── components   # Reusable UI elements and modules
+│   ├── NavBar, Footer, HeroText
+│   ├── VideoCarousels (Reel, Horizontal, Square, etc.)
+│   ├── Testimonials, ContactForm, CircularGallery
+│   └── Motion/Scroll/Loading Components
+├── pages        # Main routes/pages
+│   ├── Landing, AboutUs, Contact, FAQ
+│   ├── Works, Testimonials, T&C, Privacy
+└── Main.jsx      # Main app wrapper with routing
+```
+
+## 💡 Key Features
+
+* **Responsive Design** – Optimized for mobile, tablet, and desktop.
+* **Animated Experience** – Scroll-triggered transitions, video carousels, and dynamic text.
+* **3D Integration** – Creative components powered by Three.js & OGL for a cinematic effect.
+* **FAQ Section** – Toggleable answers using Framer Motion.
+* **Contact Form** – Functional form integrated with Formspree.
+* **Testimonials Section** – Fully customizable testimonial carousels and sliders.
+* **Loading Screen** – Animated intro screen before content appears.
+* **Accessible Design** – Proper contrast, alt tags, and keyboard navigability (where applicable).
+
+## 🛠️ Local Development
+
+### Prerequisites
+* Node.js `>=18`
+* npm `>=9`
+
+### Install & Run
+
+```bash
+git clone <your-repo-url>
+cd film-craft-website
+npm install
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+## 🚀 Deployment
+
+**Method**: *Static deployment using GreenGeeks*
+
+* Build Command: `npm run build`
+* Output Directory: `dist`
+* Environment: No special variables required
+
+## 📋 Component Notes
+#
+Here are a few notable components and their usage:
+
+| Component | Purpose |
+|-----------|---------|
+| `HorizontalVideoCarousel.jsx` | Scrollable video reels, used on homepage |
+| `CreativeApproachComponent.jsx` | Stylized explanation of brand philosophy |
+| `ReelVideoCarousel.jsx` | Reel 9/16 video slider |
+| `SqVideoCarousel.jsx` | square 1/1 video slider |
+| `LoadingScreen.jsx` | Animated loader before main site content |
+| `ScrollToTop.jsx` | Smooth back-to-top button |
+
+*Each component is modular and can be updated independently.*
+
+## 🧼 Maintenance Guide
+
+* **Text & Content**: Located in each respective component or page file.
+* **New Sections**: Duplicate and modify existing components from `/components`.
+* **Styling**: Tailwind utility-first CSS—modify class names in JSX.
+
+## 🧪 Testing & Optimization
+
+While this build does not include automated tests, it has been manually tested across:
+
+* Chrome, Firefox (desktop)
+* Android Chrome (mobile)
+
+## 🛡️ Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Site not loading | Ensure correct domain mapping and deploy env |
+| Video not playing | Check formats (`.mp4`, `.webm` recommended) |
+| Styling issues | Clear browser cache or re-deploy |
+
+## 🧾 Legal Pages Implemented
+
+* ✅ Privacy Policy
+* ✅ Terms & Conditions
+* ✅ 404 Page
+
+## 📞 Support
+
+For future updates or support:
+
+**Developer**: Anish Jaiswal  
+**Email**: `anishjaiswal1220@gmail.com`  
+**Availability**: Maintenance packages provided via google docs.
