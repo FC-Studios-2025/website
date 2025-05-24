@@ -74,85 +74,85 @@ const SlideInView = ({
 
 // Video data formatted for the ReelVideoCarousel component
 const CGIreelsData = [
-  {
-    id: "video1",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video2",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video8",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video9",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video10",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video11",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
-    aspectRatio: "9/16",
-  },
-];
+    {
+      id: "video1",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.2.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video2",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.3.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video8",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.4.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video9",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.5.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video10",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.6.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video11",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r11.mp4",
+      aspectRatio: "9/16",
+    },
+  ];
 
-const VideoEditing = [
-  {
-    id: "video3",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video4",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video5",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video6",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
-    aspectRatio: "9/16",
-  },
-  {
-    id: "video7",
-    src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
-    aspectRatio: "9/16",
-  },
-];
+  const VideoEditing = [
+    {
+      id: "video3",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r3.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r4.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video5",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r5.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video6",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r6.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video7",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r7.mp4",
+      aspectRatio: "9/16",
+    },
+  ];
 
 const carouselImages = [
   {
     id: '1',
-    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/ixnxgistndexlgsw0nx0',
+    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/g2.jpg',
     alt: 'New Arrivals Headphone',
   },
   {
     id: '2',
-    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/hkjgexftxcrvm2fw647w',
+    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/g1.jpg',
     alt: 'Motor Cross',
   },
   {
     id: '3',
-    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/uvkkcvcxtxppd0rxlduv',
+    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/g2.jpg',
     alt: 'Start Training Today',
   },
   {
     id: '4',
-    url: 'https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Graphical%20Posters/hkjgexftxcrvm2fw647w',
+    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/g1.jpg',
     alt: 'Motor Cross',
   }
 ];
@@ -160,38 +160,42 @@ const carouselImages = [
 const BusinessPromotionalVideos = [
   {
     id: '1',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/s3ceblco50cdofzldrkd'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/20240619_193908_0001.mp4'
   },
   {
     id: '2',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/oqt27l7fvyczxqh3edyl'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/20240619_194457_0001.mp4'
   },
   {
     id: '3',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/drq3dk4y9ymemes7zld3'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Real-Estate-Fcs.mp4'
   },
   {
     id: '4',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Business%20Promotional%20Videos/drq3dk4y9ymemes7zld3'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Tidy-john-ad-1.mp4'
   },
   // Add more videos as needed
 ];
 const LogoAnimations = [
   {
     id: '1',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/wvumy405s37qysp47hij'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Logo-Animation-1.mp4'
   },
   {
     id: '2',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/ohqa41kabuxiufpmozb9'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Logo-Animation-5.mp4'
   },
   {
     id: '3',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/fspevybjioctnjdhjo6y'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Logo-Animation-4.mp4'
   },
   {
     id: '4',
-    src: 'https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/Logo%20Animations/k94lrm2oy5rbpryo3xfv'
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Logo-Animation.mp4'
+  },
+  {
+    id: '5',
+    src: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Flip-Logo-Reveal.mp4'
   },
   // Add more videos as needed
 ];

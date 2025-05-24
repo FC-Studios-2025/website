@@ -114,32 +114,32 @@ const Landing = () => {
   const CGIreelsData = [
     {
       id: "video1",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306752/Reels/r1.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.2.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video2",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306747/Reels/r2.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.3.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video8",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r8.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.4.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video9",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306741/Reels/r9.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.5.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video10",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306740/Reels/r10.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r1.6.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video11",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306739/Reels/r11.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r11.mp4",
       aspectRatio: "9/16",
     },
   ];
@@ -147,27 +147,27 @@ const Landing = () => {
   const VideoEditing = [
     {
       id: "video3",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r3.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r3.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video4",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306744/Reels/r4.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r4.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video5",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r5.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r5.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video6",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306743/Reels/r6.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r6.mp4",
       aspectRatio: "9/16",
     },
     {
       id: "video7",
-      src: "https://res.cloudinary.com/dragkodnu/video/upload/v1743306742/Reels/r7.mp4",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/r7.mp4",
       aspectRatio: "9/16",
     },
   ];
@@ -256,7 +256,7 @@ const Landing = () => {
               onEnded={(e) => e.target.play()}
             >
               <source
-                src="https://res.cloudinary.com/dragkodnu/video/upload/v1743306230/Rectangle%20Videos/fp2rmpv19sccnxkaku7m.mp4"
+                src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/fcsad.mp4"
                 type="video/mp4"
               />
             </video>
@@ -306,7 +306,7 @@ const Landing = () => {
                   "We work closely with you from the outset, valuing your input and shaping it into something unique and engaging."
                 }
                 imgUrl1={
-                  "https://res.cloudinary.com/dragkodnu/image/upload/v1744279789/Images/card1img.jpg"
+                  "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/card1img.jpg"
                 }
                 altText1={"gifAnimation"}
                 heading2={"Clear, Consistent Communication"}
@@ -327,7 +327,7 @@ const Landing = () => {
                   "High-quality content shouldn’t break the bank. Our pricing is honest, competitive, and free from hidden extras — so you can budget with confidence."
                 }
                 imgUrl1={
-                  "https://res.cloudinary.com/dragkodnu/image/upload/v1744279790/Images/card2img.jpg"
+                  "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/card2img-scaled.jpg"
                 }
                 altText1={"gifAnimation"}
                 heading2={"Reliable Turnarounds, Without Compromise"}
@@ -355,7 +355,7 @@ const Landing = () => {
                 onEnded={(e) => e.target.play()}
               >
                 <source
-                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/ifiqn9mpyc3ai63sed6j"
+                  src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Purple-and-Blue-Meet-the-Drama-Teacher-Illustrative-Drama-Class-Education-Presentation-2.mp4"
                   type="video/mp4"
                 />
               </video>
@@ -377,7 +377,7 @@ const Landing = () => {
                 onEnded={(e) => e.target.play()}
               >
                 <source
-                  src="https://res.cloudinary.com/dragkodnu/video/upload/f_auto:video,q_auto/v1/Rectangle%20Videos/npjeidfko0kozqhcwrks"
+                  src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Purple-and-Blue-Meet-the-Drama-Teacher-Illustrative-Drama-Class-Education-Presentation-2.mp4"
                   type="video/mp4"
                 />
               </video>
