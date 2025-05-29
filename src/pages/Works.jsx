@@ -152,7 +152,7 @@ const carouselImages = [
   },
   {
     id: '4',
-    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/g1.jpg',
+    url: 'https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Headphones-1.1.png',
     alt: 'Motor Cross',
   }
 ];

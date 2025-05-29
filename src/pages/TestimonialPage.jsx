@@ -11,35 +11,35 @@ const TestimonialsPage = () => {
       id: 1,
       name: "Matthew Green",
       company: "",
-      image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/mntuvyrxlm4nlbxuemjg", // Update with actual image paths if needed
+      image: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/download-9.1.jpg", // Update with actual image paths if needed
       text: "Genuinely Impressive Work It was an absolute pleasure collaborating with Film Craft Studios. From the start, they really got what we were aiming for and brought it to life better than we could’ve imagined. Their attention to detail and creative flair made a huge difference. They were also super responsive throughout, which made the whole process smooth. Really chuffed with the final video – highly recommended.",
     },
     {
       id: 2,
       name: "Benjamin Scott",
       company: "",
-      image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/eibrv5jjcdnv4bw1ub0t",
+      image: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/download-11.jpg",
       text: "Genuine People Who Care About the Work You can tell these guys care about what they do. It wasn’t just about ticking boxes — they wanted the video to work for us. They asked the right questions, offered ideas we hadn’t thought of, and were really patient when we changed our minds halfway through. Really solid experience overall.",
     },
     {
       id: 3,
       name: "Mark Brown",
       company: "",
-      image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/qv8coauqmjt9ybfg2kgz",
+      image: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/download-5.1.jpg",
       text: "Good Value and No Nonsense We didn’t have a huge budget, but the team still treated our project like it mattered. They were upfront about what was possible and gave us a fair price. No hidden costs, no pressure to upgrade — just honest advice and solid work. Respect to them for that.",
     },
     {
       id: 4,
       name: "James Connor",
       company: "",
-      image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/vstgdx0wdg6up0vmyuol",
+      image: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/download-4.1.jpg",
       text: "They Just Get It Explaining creative ideas can be tricky, but somehow the team just got what we were trying to say — even when we weren’t sure ourselves. They took some vague direction and turned it into something that worked. Really grateful for how easy they made it.",
     },
     {
       id: 5,
       name: "David Wilson",
       company: "",
-      image: "https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/reviews/z9dfxfhewtbgw6zvopij",
+      image: "https://www.fcscreative.co.uk/wp-content/uploads/2025/05/download-1.jpg",
       text: "Didn’t Know What to Expect – Pleasantly Surprised Honestly, I wasn’t sure what working with a production company would be like, since it was our first time doing a video. I thought it might be all technical jargon and back-and-forth emails — but the team at Film Craft Studios made it straightforward. They explained things clearly, didn’t over complicate anything, and listened.",
     },
   ];

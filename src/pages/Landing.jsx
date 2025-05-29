@@ -377,7 +377,7 @@ const Landing = () => {
                 onEnded={(e) => e.target.play()}
               >
                 <source
-                  src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Purple-and-Blue-Meet-the-Drama-Teacher-Illustrative-Drama-Class-Education-Presentation-2.mp4"
+                  src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/Social-Media-Agency-Ad-3-Without-Audio-1.mp4"
                   type="video/mp4"
                 />
               </video>
