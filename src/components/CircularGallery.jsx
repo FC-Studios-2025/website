@@ -9,6 +9,16 @@ import {
   Texture,
 } from "ogl";
 
+// Import your local images
+// import FCSloppng from '../assets/FCSlopp.png';
+import fivepng from '../assets/five.png';
+import fourpng from '../assets/four.png';
+import onepng from '../assets/one.png';
+import sevenpng from '../assets/seven.png';
+import sixpng from '../assets/six.png';
+import threepng from '../assets/three.png';
+import twopng from '../assets/two.png';
+
 function debounce(func, wait) {
   let timeout;
   return function (...args) {
@@ -89,9 +99,9 @@ class Media {
     this.font = font;
     this.createShader();
     this.createMesh();
-    // Title creation removed to hide text under cards
     this.onResize();
   }
+  
   createShader() {
     const texture = new Texture(this.gl, { generateMipmaps: false });
     this.program = new Program(this.gl, {
@@ -157,6 +167,7 @@ class Media {
       },
       transparent: true,
     });
+    
     const img = new Image();
     img.crossOrigin = "anonymous";
     img.src = this.image;
@@ -167,7 +178,11 @@ class Media {
         img.naturalHeight,
       ];
     };
+    img.onerror = (error) => {
+      console.error('Error loading image:', this.image, error);
+    };
   }
+  
   createMesh() {
     this.plane = new Mesh(this.gl, {
       geometry: this.geometry,
@@ -175,6 +190,7 @@ class Media {
     });
     this.plane.setParent(this.scene);
   }
+  
   update(scroll, direction) {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
@@ -233,6 +249,7 @@ class Media {
       this.isBefore = this.isAfter = false;
     }
   }
+  
   onResize({ screen, viewport } = {}) {
     if (screen) this.screen = screen;
     if (viewport) {
@@ -250,15 +267,15 @@ class Media {
     const isMedium = this.screen.width >= 640 && this.screen.width < 768; // md breakpoint
 
     // Adjust scale based on screen size
-    let heightScale = 850;
+    let heightScale = 1050;
     let widthScale = 600;
 
     if (isSmall) {
-      heightScale = 750; // smaller height for mobile
+      heightScale = 900; // smaller height for mobile
       widthScale = 500; // smaller width for mobile
     } else if (isMedium) {
-      heightScale = 800; // medium height for tablets
-      widthScale = 600; // medium width for tablets
+      heightScale = 1100; // medium height for tablets
+      widthScale = 650; // medium width for tablets
     }
 
     this.scale = this.screen.height / 1500;
@@ -447,19 +464,16 @@ class App {
   }
 
   createPaginationDots(items) {
+    // Use local images as default
     const defaultItems = [
-      { image: `https://picsum.photos/seed/1/800/600`, text: "Bridge" },
-      { image: `https://picsum.photos/seed/2/800/600`, text: "Desk Setup" },
-      { image: `https://picsum.photos/seed/3/800/600`, text: "Waterfall" },
-      { image: `https://picsum.photos/seed/4/800/600`, text: "Strawberries" },
-      { image: `https://picsum.photos/seed/5/800/600`, text: "Deep Diving" },
-      { image: `https://picsum.photos/seed/16/800/600`, text: "Train Track" },
-      { image: `https://picsum.photos/seed/17/800/600`, text: "Santorini" },
-      { image: `https://picsum.photos/seed/8/800/600`, text: "Blurry Lights" },
-      { image: `https://picsum.photos/seed/9/800/600`, text: "New York" },
-      { image: `https://picsum.photos/seed/10/800/600`, text: "Good Boy" },
-      { image: `https://picsum.photos/seed/21/800/600`, text: "Coastline" },
-      { image: `https://picsum.photos/seed/12/800/600`, text: "Palm Trees" },
+      { image: onepng, text: "Image One" },
+      { image: twopng, text: "Image Two" },
+      { image: threepng, text: "Image Three" },
+      { image: fourpng, text: "Image Four" },
+      { image: fivepng, text: "Image Five" },
+      { image: sixpng, text: "Image Six" },
+      { image: sevenpng, text: "Image Seven" },
+      // { image: FCSloppng, text: "FC Slopp" },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
 
@@ -483,34 +497,35 @@ class App {
 
     this.container.appendChild(this.gl.canvas);
   }
+  
   createCamera() {
     this.camera = new Camera(this.gl);
     this.camera.fov = 45;
     this.camera.position.z = 20;
   }
+  
   createScene() {
     this.scene = new Transform();
   }
+  
   createGeometry() {
     this.planeGeometry = new Plane(this.gl, {
       heightSegments: 50,
       widthSegments: 100,
     });
   }
+  
   createMedias(items, bend = 1, textColor, borderRadius, font) {
+    // Use local images as default
     const defaultItems = [
-      { image: `https://picsum.photos/seed/1/800/600`, text: "Bridge" },
-      { image: `https://picsum.photos/seed/2/800/600`, text: "Desk Setup" },
-      { image: `https://picsum.photos/seed/3/800/600`, text: "Waterfall" },
-      { image: `https://picsum.photos/seed/4/800/600`, text: "Strawberries" },
-      { image: `https://picsum.photos/seed/5/800/600`, text: "Deep Diving" },
-      { image: `https://picsum.photos/seed/16/800/600`, text: "Train Track" },
-      { image: `https://picsum.photos/seed/17/800/600`, text: "Santorini" },
-      { image: `https://picsum.photos/seed/8/800/600`, text: "Blurry Lights" },
-      { image: `https://picsum.photos/seed/9/800/600`, text: "New York" },
-      { image: `https://picsum.photos/seed/10/800/600`, text: "Good Boy" },
-      { image: `https://picsum.photos/seed/21/800/600`, text: "Coastline" },
-      { image: `https://picsum.photos/seed/12/800/600`, text: "Palm Trees" },
+      { image: onepng, text: "Image One" },
+      { image: twopng, text: "Image Two" },
+      { image: threepng, text: "Image Three" },
+      { image: fourpng, text: "Image Four" },
+      { image: fivepng, text: "Image Five" },
+      { image: sixpng, text: "Image Six" },
+      { image: sevenpng, text: "Image Seven" },
+      // { image: FCSloppng, text: "FC Slopp" },
     ];
     const galleryItems = items && items.length ? items : defaultItems;
     this.mediasImages = galleryItems.concat(galleryItems);
@@ -566,12 +581,14 @@ class App {
 
     this.pauseAutoScroll();
   }
+  
   onTouchMove(e) {
     if (!this.isDown) return;
     const x = e.touches ? e.touches[0].clientX : e.clientX;
     const distance = (this.start - x) * 0.05;
     this.scroll.target = this.scroll.position + distance;
   }
+  
   onTouchUp() {
     this.isDown = false;
     this.onCheck();
@@ -580,8 +597,6 @@ class App {
     }, 1000);
   }
 
-  // Removed onWheel method to disable scroll movement
-
   onCheck() {
     if (!this.medias || !this.medias[0]) return;
     const width = this.medias[0].width;
@@ -589,6 +604,7 @@ class App {
     const item = width * itemIndex;
     this.scroll.target = this.scroll.target < 0 ? -item : item;
   }
+  
   onResize() {
     // Make sure container exists
     if (!this.container) return;
@@ -622,6 +638,7 @@ class App {
       );
     }
   }
+  
   update() {
     this.scroll.current = lerp(
       this.scroll.current,
@@ -634,7 +651,6 @@ class App {
       this.medias.forEach((media) => media.update(this.scroll, direction));
 
       // Update pagination dots based on current slide
-      // In the App class update method
       if (this.paginationDots && this.medias[0]) {
         const width = this.medias[0].width;
         const currentIndex =
@@ -648,6 +664,7 @@ class App {
     this.scroll.last = this.scroll.current;
     this.raf = window.requestAnimationFrame(this.update.bind(this));
   }
+  
   addEventListeners() {
     this.boundOnResize = this.onResize.bind(this);
     this.boundOnTouchDown = this.onTouchDown.bind(this);
@@ -662,9 +679,8 @@ class App {
     window.addEventListener("touchstart", this.boundOnTouchDown);
     window.addEventListener("touchmove", this.boundOnTouchMove);
     window.addEventListener("touchend", this.boundOnTouchUp);
-
-    // Removed wheel event listeners to disable scroll movement
   }
+  
   destroy() {
     // Clean up pagination dots
     if (this.paginationDots) {

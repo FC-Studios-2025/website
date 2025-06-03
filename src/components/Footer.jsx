@@ -123,64 +123,81 @@ const Footer = () => {
                 <li>01273-807674</li>
                 <li>M George Corporation LTD</li>
                 <li>86-90 Paul Street</li>
-                <li>London, England EC2A 4NE</li>
+                <li>London, England EC2A 4NE</li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-500 text-xs md:text-sm">
-              © 2025 Film Craft Studios. All rights reserved.
-            </p>
-            <div className="flex gap-4 mt-4 md:mt-0 md:text-sm text-gray-500">
-              <a
-                href="https://www.instagram.com/film_craft_studios"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
-              >
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  className="w-10 h-10 md:hidden"
-                />
-                <span className="hidden md:inline">Instagram</span>
-              </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
-              >
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  className="w-10 h-10 md:hidden"
-                />
-                <span className="hidden md:inline">Twitter</span>
-              </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className="w-10 h-10 md:hidden"
-                />
-                <span className="hidden md:inline">LinkedIn</span>
-              </a>
-              <a
-                href=""
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
-              >
-                <FontAwesomeIcon
-                  icon={faYoutube}
-                  className="w-10 h-10 md:hidden"
-                />
-                <span className="hidden md:inline">YouTube</span>
-              </a>
+          <div className="border-t border-gray-800 mt-8 pt-8">
+            {/* Copyright and Social Links Row */}
+            <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+              <p className="text-gray-500 text-xs md:text-sm">
+                © 2025 Film Craft Studios. All rights reserved.
+              </p>
+              <div className="flex gap-4 mt-4 md:mt-0 md:text-sm text-gray-500">
+                <a
+                  href="https://www.instagram.com/film_craft_studios"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    className="w-10 h-10 md:hidden"
+                  />
+                  <span className="hidden md:inline">Instagram</span>
+                </a>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    className="w-10 h-10 md:hidden"
+                  />
+                  <span className="hidden md:inline">Twitter</span>
+                </a>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    className="w-10 h-10 md:hidden"
+                  />
+                  <span className="hidden md:inline">LinkedIn</span>
+                </a>
+                <a
+                  href=""
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={faYoutube}
+                    className="w-10 h-10 md:hidden"
+                  />
+                  <span className="hidden md:inline">YouTube</span>
+                </a>
+              </div>
+            </div>
+            
+            {/* Stylish Credit Line */}
+            <div className="text-center pt-4 border-t border-gray-800">
+              <p className="text-xs sm:text-sm text-gray-400 font-light tracking-wide">
+                Website crafted with{" "}
+                <span className="text-red-500 animate-pulse inline-block transform hover:scale-110 transition-transform duration-200">
+                  ❤️
+                </span>{" "}
+                by{" "}
+                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent font-medium hover:from-teal-300 hover:to-blue-400 transition-all duration-300 cursor-default">
+                  FCS Creative
+                </span>
+              </p>
             </div>
           </div>
         </div>
