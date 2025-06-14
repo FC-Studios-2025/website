@@ -4,6 +4,7 @@ import FCSlogo from "../assets/FCSlogo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faInstagram,
+  faFacebook,
   faLinkedin,
   faTwitter,
   faYoutube,
@@ -148,6 +149,18 @@ const Footer = () => {
                   <span className="hidden md:inline">Instagram</span>
                 </a>
                 <a
+                  href="https://www.facebook.com/share/16fSxLgpTh/?mibextid=qi2Omg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
+                >
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    className="w-10 h-10 md:hidden"
+                  />
+                  <span className="hidden md:inline">Facebook</span>
+                </a>
+                {/* <a
                   href=""
                   target="_blank"
                   rel="noopener noreferrer"
@@ -158,9 +171,9 @@ const Footer = () => {
                     className="w-10 h-10 md:hidden"
                   />
                   <span className="hidden md:inline">Twitter</span>
-                </a>
+                </a> */}
                 <a
-                  href=""
+                  href="https://linkedin.com/company/film-craft-studios/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
@@ -172,7 +185,7 @@ const Footer = () => {
                   <span className="hidden md:inline">LinkedIn</span>
                 </a>
                 <a
-                  href=""
+                  href="https://youtube.com/@film_craft_studios"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-500 hover:text-white transition-colors duration-300 cursor-pointer flex items-center"
