@@ -78,10 +78,10 @@ const faqs = [
     ),
   },
   {
-    question: "What types of videos do you specialize in?",
+    question: "What types of videos do you specialise in?",
     answer: (
       <>
-        We specialize in a wide range of videos, including but not limited to
+        We specialise in a wide range of videos, including but not limited to
         corporate videos, promotional videos, social media content, event
         coverage, documentaries, and more. Whether you need a captivating
         advertisement or a compelling brand story, we have the expertise to

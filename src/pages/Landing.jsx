@@ -101,7 +101,7 @@ const approachesList2 = [
   "Compelling intros",
   "Audience engagement hooks",
   "Call-to-action integration",
-  "Thumbnail optimiation",
+  "Thumbnail optimisation",
   "SEO-friendly titles",
   "Consistent posting schedule",
   "Collaborations for reach",
