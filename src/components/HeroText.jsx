@@ -16,7 +16,7 @@ export default function HeroText() {
           </span>
         </h1>
         <p className="text-center text-gray-400 text-sm md:text-base lg:text-lg max-w-2xl mx-auto mt-4">
-          Transforming visions into captivating visual stories that leave
+          Transforming ideas into captivating visual stories that leave
           lasting impressions.
         </p>
         <div className="flex justify-center mt-8 md:mt-10">

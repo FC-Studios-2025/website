@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
         {/* Image Section */}
         <div className="w-full md:w-2/3">
           <img
-            src="https://res.cloudinary.com/dragkodnu/image/upload/f_auto,q_auto/v1/Images/Extras/w5urcck4twt4xlumkmqa"
+            src="https://www.fcscreative.co.uk/wp-content/uploads/2025/05/IMG_9361.jpg"
             alt="Privacy Banner"
             className="w-full h-64 md:h-full object-cover object-center"
             loading="lazy"

@@ -101,7 +101,7 @@ const approachesList2 = [
   "Compelling intros",
   "Audience engagement hooks",
   "Call-to-action integration",
-  "Thumbnail optimization",
+  "Thumbnail optimiation",
   "SEO-friendly titles",
   "Consistent posting schedule",
   "Collaborations for reach",
@@ -111,6 +111,44 @@ const approachesList2 = [
 
 const Landing = () => {
   // Video data formatted for the ReelVideoCarousel component
+  const videoRowOne = [
+    {
+      id: "video1",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Video-Editing.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video2",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Visual-Effects.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video8",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Colour-Grading.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video9",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Motion-Graphics.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video10",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/CGI.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video11",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Graphic-Designing.mp4",
+      aspectRatio: "9/16",
+    },
+    {
+      id: "video12",
+      src: "https://www.fcscreative.co.uk/wp-content/uploads/2025/06/Audio-Enhancement.mp4",
+      aspectRatio: "9/16",
+    },
+  ];
+
   const CGIreelsData = [
     {
       id: "video1",
@@ -386,7 +424,7 @@ const Landing = () => {
         </section>
 
         {/* Enchant Your Audience section */}
-        <div className="text-white py-16">
+        {/* <div className="text-white py-16">
           <FadeInView>
             <div className="font-bold md:pb-6 text-xl md:text-2xl lg:text-4xl">
               <h2>
@@ -402,6 +440,24 @@ const Landing = () => {
                 borderRadius={0.02}
               />
             </div>
+          </FadeInView>
+        </div> */}
+
+        {/* Video carousels - full width sections */}
+        <div className="text-white">
+          <FadeInView>
+            <div className="font-bold text-xl md:text-2xl lg:text-4xl">
+              <h2>
+                Enchant Your <span className="italic font-light">Audience</span>
+              </h2>
+            </div>
+          </FadeInView>
+          <FadeInView delay={0.2}>
+            <ReelVideoCarousel
+              videos={videoRowOne}
+              // carouselTitle="Featured Reels"
+              // containerClassName="bg-white py-8"
+            />
           </FadeInView>
         </div>
 
