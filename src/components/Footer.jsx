@@ -120,7 +120,14 @@ const Footer = () => {
             <div>
               <h3 className="font-medium mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li>info@filmcraftstudios.com</li>
+                <li>
+                  <a
+                    href="mailto:info@filmcraftstudios.com"
+                    className="hover:underline"
+                  >
+                    info@filmcraftstudios.com
+                  </a>
+                </li>
                 <li>
                   <a href="tel:+4401293307403" className="hover:underline">
                     (+44) 01293 307403
