@@ -444,7 +444,7 @@ const Landing = () => {
         </div> */}
 
         {/* Video carousels - full width sections */}
-        <div className="text-white">
+        <div className="text-white py-16">
           <FadeInView>
             <div className="font-bold text-xl md:text-2xl lg:text-4xl">
               <h2>
