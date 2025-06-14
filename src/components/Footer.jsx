@@ -6,7 +6,7 @@ import {
   faInstagram,
   faFacebook,
   faLinkedin,
-  faTwitter,
+  // faTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -120,10 +120,10 @@ const Footer = () => {
             <div>
               <h3 className="font-medium mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
-                <li onClick={handleEmailClick}>info@filmcraftstudios.com</li>
+                <li>info@filmcraftstudios.com</li>
                 <li>
                   <a href="tel:+441293307403" className="hover:underline">
-                    (+44) 1293 307 403
+                    (+44) 01293 307403
                   </a>
                 </li>
                 <li>M George Corporation LTD</li>
