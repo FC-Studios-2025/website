@@ -121,7 +121,11 @@ const Footer = () => {
               <h3 className="font-medium mb-4">Contact</h3>
               <ul className="space-y-2 text-gray-400">
                 <li onClick={handleEmailClick}>info@filmcraftstudios.com</li>
-                <li>01273-807674</li>
+                <li>
+                  <a href="tel:+441293307403" className="hover:underline">
+                    (+44) 1293 307 403
+                  </a>
+                </li>
                 <li>M George Corporation LTD</li>
                 <li>86-90 Paul Street</li>
                 <li>London, England EC2A 4NE</li>
@@ -198,7 +202,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            
+
             {/* Stylish Credit Line */}
             <div className="text-center pt-4 border-t border-gray-800">
               <p className="text-xs sm:text-sm text-gray-400 font-light tracking-wide">
@@ -207,9 +211,11 @@ const Footer = () => {
                   ❤️
                 </span>{" "}
                 by{" "}
-                <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent font-medium hover:from-teal-300 hover:to-blue-400 transition-all duration-300 cursor-default">
-                  FCS Creative
-                </span>
+                <a href="https://www.fcscreative.co.uk" target="_blank">
+                  <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent font-medium hover:from-teal-300 hover:to-blue-400 transition-all duration-300 cursor-pointer">
+                    FCS Creative
+                  </span>
+                </a>
               </p>
             </div>
           </div>
