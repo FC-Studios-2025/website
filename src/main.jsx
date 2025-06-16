@@ -10,25 +10,26 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time or actual resource loading
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Adjust timing as needed
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <React.StrictMode>
-      {isLoading ? (
-        <LoadingScreen />
-      ) : (
-        <div className="bg-black">
+      <div className="bg-black">
+        {isLoading && <LoadingScreen />}
+        
+        {/* Always mount the router, but hide it during loading */}
+        <div style={{ display: isLoading ? "none" : "block" }}>
           <RouterProvider router={router} />
         </div>
-      )}
+      </div>
     </React.StrictMode>
   );
 };
+
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);

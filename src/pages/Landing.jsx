@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NavBar from "../components/NavBar";
-import CircularGallery from "../components/CircularGallery";
 import ReelVideoCarousel from "../components/ReelVideoCarousel";
 import SqVideoCarousel from "../components/SqVideoCarousel copy";
 import BasicButton from "../components/BasicButton";
